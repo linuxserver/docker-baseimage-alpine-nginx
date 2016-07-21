@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 # make our folders
-mkdir -p /config/{nginx/site-confs,www,log/nginx,keys} /run/nginx
+mkdir -p /config/{nginx/site-confs,www,log/nginx,keys}
 
 # copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && cp /defaults/nginx.conf /config/nginx/nginx.conf
@@ -11,4 +11,4 @@ mkdir -p /config/{nginx/site-confs,www,log/nginx,keys} /run/nginx
 cp /config/nginx/nginx-fpm.conf /etc/php5/php-fpm.conf
 
 # permissions
-chown -R abc:abc /config /run/nginx
+chown -R abc:abc /config
