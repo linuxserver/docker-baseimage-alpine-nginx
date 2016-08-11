@@ -3,7 +3,8 @@
 # make our folders
 mkdir -p \
 	/config/{nginx/site-confs,www,log/nginx,keys} \
-	/run
+	/run \
+	/var/lib/nginx/tmp/client_body
 
 # copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && \
