@@ -3,7 +3,7 @@ MAINTAINER sparklyballs
 
 # install packages
 RUN \
-apk add --no-cache \
+ apk add --no-cache \
 	git \
 	nano \
 	nginx \
@@ -11,10 +11,7 @@ apk add --no-cache \
 	php5 \
 	php5-cli \
 	php5-json \
-	php5-fpm && \
-
-# cleanup
-rm -rf /var/cache/apk/*
+	php5-fpm
 
 COPY root/ /
 
