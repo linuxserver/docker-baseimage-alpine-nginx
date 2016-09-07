@@ -1,9 +1,0 @@
-/config/log/letsencrypt/*.log {
- weekly
- rotate 52
- compress
- delaycompress
-  missingok
-  notifempty
-  sharedscripts
-}
