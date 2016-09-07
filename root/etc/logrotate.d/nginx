@@ -1,0 +1,12 @@
+/config/log/nginx/*.log {
+        weekly
+        rotate 14
+        compress
+        delaycompress
+        notifempty
+        missingok
+        sharedscripts
+        postrotate
+                /etc/init.d/nginx --quiet --ifstarted reopen
+        endscript
+}
