@@ -7,6 +7,6 @@
         missingok
         sharedscripts
         postrotate
-                /etc/init.d/nginx --quiet --ifstarted reopen
+                s6-svc -h /etc/services.d/nginx
         endscript
 }
