@@ -3,6 +3,7 @@
         rotate 14
         compress
         delaycompress
+        nodateext
         notifempty
         missingok
         sharedscripts
