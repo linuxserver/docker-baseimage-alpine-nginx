@@ -8,8 +8,8 @@ server {
 
 	server_name _;
 
-	ssl_certificate /config/keys/self-signed/cert.crt;
-	ssl_certificate_key /config/keys/self-signed/cert.key;
+	ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;
 
 	client_max_body_size 0;
 
