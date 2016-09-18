@@ -2,7 +2,7 @@
 
 # make our folders
 mkdir -p \
-	/config/{nginx/site-confs,www,log/nginx,keys/self-signed} \
+	/config/{nginx/site-confs,www,log/nginx,keys} \
 	/run \
 	/var/lib/nginx/tmp/client_body
 
