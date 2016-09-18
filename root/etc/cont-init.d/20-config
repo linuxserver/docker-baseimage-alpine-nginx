@@ -17,6 +17,9 @@ mkdir -p \
 	cp /defaults/index.html /config/www/index.html
 cp /config/nginx/nginx-fpm.conf /etc/php5/php-fpm.conf
 
+# fix timezone in php.ini
+sed -i "s#date.timezone = .*#date.timezone = $TZ#g" /etc/php5/php.ini
+
 # permissions
 chown -R abc:abc \
 	/config \
