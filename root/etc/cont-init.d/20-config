@@ -2,7 +2,7 @@
 
 # make our folders
 mkdir -p \
-	/config/{nginx/site-confs,www,log/nginx,keys} \
+	/config/{nginx/site-confs,www,log/nginx,keys/self-signed} \
 	/run \
 	/var/lib/nginx/tmp/client_body
 
@@ -16,6 +16,9 @@ mkdir -p \
 [[ $(find /config/www -type f | wc -l) -eq 0 ]] && \
 	cp /defaults/index.html /config/www/index.html
 cp /config/nginx/nginx-fpm.conf /etc/php5/php-fpm.conf
+
+# fix timezone in php.ini
+sed -i "s#date.timezone = .*#date.timezone = $TZ#g" /etc/php5/php.ini
 
 # permissions
 chown -R abc:abc \

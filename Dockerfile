@@ -6,6 +6,7 @@ RUN \
  apk add --no-cache \
 	git \
 	nano \
+	logrotate \
 	nginx \
 	openssl \
 	php5 \
