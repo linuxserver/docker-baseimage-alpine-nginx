@@ -25,3 +25,5 @@ chown -R abc:abc \
 	/config \
 	/run \
 	/var/lib/nginx
+chmod -R g+w \
+	/config/{nginx,www,log}
