@@ -1,5 +1,5 @@
 FROM lsiobase/alpine
-MAINTAINER sparklyballs
+MAINTAINER sparklyballs, aptalca
 
 # install packages
 RUN \
