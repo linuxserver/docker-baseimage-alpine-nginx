@@ -13,9 +13,14 @@ RUN \
 	php5-cli \
 	php5-json \
 	php5-fpm && \
- sed -i '1s/^/fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;\n/' /etc/nginx/fastcgi_params
 
+# configure nginx
+ echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
+	/etc/nginx/fastcgi_params
+
+# add local files
 COPY root/ /
 
+# ports and volumes
 EXPOSE 80 443
 VOLUME /config
