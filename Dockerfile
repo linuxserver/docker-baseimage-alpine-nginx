@@ -4,6 +4,7 @@ MAINTAINER sparklyballs, aptalca
 # install packages
 RUN \
  apk add --no-cache \
+ 	apache2-utils \
 	git \
 	nano \
 	logrotate \
