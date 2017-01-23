@@ -10,10 +10,9 @@ RUN \
 	logrotate \
 	nginx \
 	openssl \
-	php5 \
-	php5-cli \
-	php5-json \
-	php5-fpm && \
+	php7 \
+	php7-json \
+	php7-fpm && \
 
 # configure nginx
  echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
