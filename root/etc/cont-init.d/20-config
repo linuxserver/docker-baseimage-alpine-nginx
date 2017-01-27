@@ -9,8 +9,6 @@ mkdir -p \
 # copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && \
 	cp /defaults/nginx.conf /config/nginx/nginx.conf
-[[ ! -f /config/nginx/nginx-fpm.conf ]] && \
-	cp /defaults/nginx-fpm.conf /config/nginx/nginx-fpm.conf
 [[ ! -f /config/nginx/site-confs/default ]] && \
 	cp /defaults/default /config/nginx/site-confs/default
 [[ $(find /config/www -type f | wc -l) -eq 0 ]] && \
@@ -18,6 +16,12 @@ mkdir -p \
 
 # fix timezone in php.ini
 sed -i "s#;date.timezone =.*#date.timezone = $TZ#g" /etc/php7/php.ini
+#fix php-fpm log location
+sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/error.log#g" /etc/php7/php-fpm.conf
+#fix php-fpm user
+sed -i "s#user = nobody.*#user = abc#g" /etc/php7/php-fpm.d/www.conf
+sed -i "s#group = nobody.*#group = abc#g" /etc/php7/php-fpm.d/www.conf
+
 
 # permissions
 chown -R abc:abc \
