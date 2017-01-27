@@ -15,10 +15,10 @@ mkdir -p \
 	cp /defaults/default /config/nginx/site-confs/default
 [[ $(find /config/www -type f | wc -l) -eq 0 ]] && \
 	cp /defaults/index.html /config/www/index.html
-cp /config/nginx/nginx-fpm.conf /etc/php5/php-fpm.conf
+cp /config/nginx/nginx-fpm.conf /etc/php7/php-fpm.conf
 
 # fix timezone in php.ini
-sed -i "s#date.timezone = .*#date.timezone = $TZ#g" /etc/php5/php.ini
+sed -i "s#date.timezone = .*#date.timezone = $TZ#g" /etc/php7/php.ini
 
 # permissions
 chown -R abc:abc \
