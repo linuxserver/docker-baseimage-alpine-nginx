@@ -18,7 +18,7 @@ mkdir -p \
 cp /config/nginx/nginx-fpm.conf /etc/php7/php-fpm.conf
 
 # fix timezone in php.ini
-sed -i "s#date.timezone = .*#date.timezone = $TZ#g" /etc/php7/php.ini
+sed -i "s#;date.timezone =.*#date.timezone = $TZ#g" /etc/php7/php.ini
 
 # permissions
 chown -R abc:abc \
