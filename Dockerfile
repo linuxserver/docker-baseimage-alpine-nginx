@@ -4,15 +4,17 @@ MAINTAINER sparklyballs, aptalca
 # install packages
 RUN \
  apk add --no-cache \
- 	apache2-utils \
+	apache2-utils \
 	git \
-	nano \
 	logrotate \
+	nano \
 	nginx \
 	openssl \
 	php7 \
+	php7-fpm \
 	php7-json \
-	php7-fpm && \
+	php7-session \
+	php7-zlib && \
 
 # configure nginx
  echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
