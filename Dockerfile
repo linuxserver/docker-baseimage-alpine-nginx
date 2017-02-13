@@ -13,6 +13,7 @@ RUN \
 	php7 \
 	php7-fpm \
 	php7-json \
+	php7-openssl \
 	php7-session \
 	php7-zlib && \
 
