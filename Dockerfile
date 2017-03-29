@@ -9,7 +9,9 @@ RUN \
 	logrotate \
 	nano \
 	nginx \
-	openssl \
+	openssl && \
+ apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	php7 \
 	php7-fpm \
 	php7-json \
