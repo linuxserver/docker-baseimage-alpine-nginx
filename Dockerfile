@@ -11,6 +11,9 @@ RUN \
 	nginx \
 	openssl && \
  apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/main \
+	libressl2.5-libssl && \
+ apk add --no-cache \
 	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	php7 \
 	php7-fpm \
