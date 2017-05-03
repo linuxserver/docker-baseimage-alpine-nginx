@@ -16,11 +16,15 @@ RUN \
  apk add --no-cache \
 	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	php7 \
+	php7-fileinfo \
 	php7-fpm \
 	php7-json \
 	php7-mbstring \
 	php7-openssl \
 	php7-session \
+	php7-simplexml \
+	php7-xml \
+	php7-xmlwriter \
 	php7-zlib && \
 
 # configure nginx
