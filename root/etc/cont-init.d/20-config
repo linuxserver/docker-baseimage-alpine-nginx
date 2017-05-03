@@ -2,7 +2,7 @@
 
 # make our folders
 mkdir -p \
-	/config/{nginx/site-confs,www,log/nginx,keys,php,log/php} \
+	/config/{nginx/site-confs,www,log/nginx,keys,log/php} \
 	/run \
 	/var/lib/nginx/tmp/client_body
 
@@ -30,4 +30,4 @@ chown -R abc:abc \
 	/var/lib/nginx
 chmod -R g+w \
 	/config/{nginx,www}
-chmod -R 644 /etc/logrotate.d /config/log
+chmod -R 644 /etc/logrotate.d
