@@ -7,7 +7,7 @@
 
 [Dockerfile](https://github.com/linuxserver/docker-baseimage-alpine-nginx/blob/master/Dockerfile)
 
-[![](https://images.microbadger.com/badges/image/lsiobase/alpine.nginx.svg)](https://microbadger.com/images/lsiobase/alpine.nginx "Get your own image badge on microbadger.com")[![Build Status](http://jenkins.linuxserver.io:8080/job/Dockers/job/BaseImages/job/lsiobase-alpine.nginx-3.5/badge/icon)](http://jenkins.linuxserver.io:8080/job/Dockers/job/BaseImages/job/lsiobase-alpine.nginx-3.5/)
+[![](https://images.microbadger.com/badges/image/lsiobase/alpine.nginx.svg)](https://microbadger.com/images/lsiobase/alpine.nginx "Get your own image badge on microbadger.com")[![Build Status](http://jenkins.linuxserver.io:8080/job/Dockers/job/BaseImages/job/lsiobase-alpine.nginx-3.6/badge/icon)](http://jenkins.linuxserver.io:8080/job/Dockers/job/BaseImages/job/lsiobase-alpine.nginx-3.6/)
 
 ### This base container is not aimed at public consumption. It exists to serve as a single endpoint for LinuxServer.io containers and is based upon [Alpine Linux](https://hub.docker.com/_/alpine/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
 
