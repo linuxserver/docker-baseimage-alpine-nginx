@@ -4,7 +4,8 @@
 mkdir -p \
 	/config/{nginx/site-confs,www,log/nginx,keys,log/php} \
 	/run \
-	/var/lib/nginx/tmp/client_body
+	/var/lib/nginx/tmp/client_body \
+	/var/tmp/nginx
 
 # copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && \
