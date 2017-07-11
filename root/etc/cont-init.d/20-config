@@ -4,7 +4,8 @@
 mkdir -p \
 	/config/{nginx/site-confs,www,log/nginx,keys,log/php} \
 	/run \
-	/var/lib/nginx/tmp/client_body
+	/var/lib/nginx/tmp/client_body \
+	/var/tmp/nginx
 
 # copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && \
@@ -27,7 +28,8 @@ sed -i "s#group = nobody.*#group = abc#g" /etc/php7/php-fpm.d/www.conf
 chown -R abc:abc \
 	/config \
 	/run \
-	/var/lib/nginx
+	/var/lib/nginx \
+	/var/tmp/nginx
 chmod -R g+w \
 	/config/{nginx,www}
 chmod -R 644 /etc/logrotate.d
