@@ -6,7 +6,7 @@ RUN \
  apk add --no-cache \
 	apache2-utils \
 	git \
-	libressl2.5-libssl \
+	libressl2.6-libssl \
 	logrotate \
 	nano \
 	nginx \
