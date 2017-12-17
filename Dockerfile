@@ -1,12 +1,13 @@
-FROM lsiobase/alpine:3.6
-MAINTAINER sparklyballs, aptalca
+FROM lsiobase/alpine:3.7
+LABEL maintainer="sparklyballs,aptalca"
 
 # install packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache \
 	apache2-utils \
 	git \
-	libressl2.5-libssl \
+	libressl2.6-libssl \
 	logrotate \
 	nano \
 	nginx \
@@ -22,13 +23,11 @@ RUN \
 	php7-xml \
 	php7-xmlwriter \
 	php7-zlib && \
-
-# configure nginx
+ echo "**** configure nginx ****" && \
  echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
 	/etc/nginx/fastcgi_params && \
  rm -f /etc/nginx/conf.d/default.conf && \
-
-# fix logrotate
+ echo "**** fix logrotate ****" && \
  sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf
 
 # add local files
