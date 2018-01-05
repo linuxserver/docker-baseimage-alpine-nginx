@@ -1,5 +1,4 @@
 FROM lsiobase/alpine:3.7
-LABEL maintainer="sparklyballs,aptalca"
 
 # install packages
 RUN \
