@@ -17,7 +17,7 @@ mkdir -p \
 
 # create local php.ini if it doesn't exist, set local timezone
 [[ ! -f /config/php/php-local.ini ]] && \
-	printf "# Edit this file to override php.ini directives and restart the container\n\ndate.timezone = $TZ\n" > /config/php/php-local.ini
+	printf "; Edit this file to override php.ini directives and restart the container\n\ndate.timezone = $TZ\n" > /config/php/php-local.ini
 # copy user php-local.ini to image
 cp /config/php/php-local.ini /etc/php7/conf.d/php-local.ini
 #fix php-fpm log location
