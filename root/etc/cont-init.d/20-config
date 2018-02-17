@@ -2,7 +2,7 @@
 
 # make our folders
 mkdir -p \
-	/config/{nginx/site-confs,www,log/nginx,keys,log/php} \
+	/config/{nginx/site-confs,www,log/nginx,keys,log/php,php} \
 	/run \
 	/var/lib/nginx/tmp/client_body \
 	/var/tmp/nginx
@@ -15,8 +15,11 @@ mkdir -p \
 [[ $(find /config/www -type f | wc -l) -eq 0 ]] && \
 	cp /defaults/index.html /config/www/index.html
 
-# fix timezone in php.ini
-sed -i "s#;date.timezone =.*#date.timezone = $TZ#g" /etc/php7/php.ini
+# create local php.ini if it doesn't exist, set local timezone
+[[ ! -f /config/php/php-local.ini ]] && \
+	printf "; Edit this file to override php.ini directives and restart the container\\n\\ndate.timezone = %s\\n" "$TZ" > /config/php/php-local.ini
+# copy user php-local.ini to image
+cp /config/php/php-local.ini /etc/php7/conf.d/php-local.ini
 #fix php-fpm log location
 sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/error.log#g" /etc/php7/php-fpm.conf
 #fix php-fpm user
