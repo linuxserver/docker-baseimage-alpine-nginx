@@ -24,7 +24,7 @@
 
 [![](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/Dockerfile-Link-green.png)](https://github.com/linuxserver/docker-baseimage-alpine-nginx/blob/master/Dockerfile)
 
-A custom base image built with [Alpine linux][appurl], [nginx][nginxurl]and [S6 overlay](https://github.com/just-containers/s6-overlay).. 
+A custom base image built with [Alpine linux][appurl], [nginx][nginxurl] and [S6 overlay](https://github.com/just-containers/s6-overlay).. 
 
 Featuring :-
 
