@@ -30,7 +30,6 @@ sed -i "s#group = nobody.*#group = abc#g" /etc/php7/php-fpm.d/www.conf
 # permissions
 chown -R abc:abc \
 	/config \
-	/run \
 	/var/lib/nginx \
 	/var/tmp/nginx
 chmod -R g+w \
