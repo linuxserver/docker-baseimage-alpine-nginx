@@ -25,7 +25,11 @@ sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/error.lo
 #fix php-fpm user
 sed -i "s#user = nobody.*#user = abc#g" /etc/php7/php-fpm.d/www.conf
 sed -i "s#group = nobody.*#group = abc#g" /etc/php7/php-fpm.d/www.conf
-
+# create override for www.conf if it doesn't exist
+[[ ! -f /config/php/www2.conf ]] && \
+	printf "; Edit this file to override www.conf and php-fpm.conf directives and restart the container\\n\\n; Pool name\\n[www]\\n\\n" > /config/php/www2.conf
+# copy user www2.conf to image
+cp /config/php/www2.conf /etc/php7/php-fpm.d/www2.conf
 
 # permissions
 chown -R abc:abc \
