@@ -15,7 +15,7 @@ libacl-2.2.52-r5
 libattr-2.4.47-r7
 libc-utils-0.7.1-r0
 libcrypto1.1-1.1.1b-r1
-libcurl-7.64.0-r1
+libcurl-7.64.0-r2
 libedit-20181209.3.1-r0
 libmagic-5.36-r0
 libressl2.7-libcrypto-2.7.5-r0
@@ -52,7 +52,7 @@ php7-xmlwriter-7.2.18-r0
 popt-1.16-r7
 readline-7.0.003-r1
 scanelf-1.2.3-r0
-shadow-4.5-r1
+shadow-4.5-r2
 ssl_client-1.29.3-r10
 tzdata-2019a-r0
 xz-5.2.4-r0
