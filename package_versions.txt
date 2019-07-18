@@ -16,7 +16,7 @@ libc-utils-0.7.1-r0
 libcrypto1.0-1.0.2r-r0
 libcurl-7.61.1-r2
 libedit-20170329.3.1-r3
-libmagic-5.32-r0
+libmagic-5.32-r1
 libressl2.7-libcrypto-2.7.5-r0
 libressl2.7-libssl-2.7.5-r0
 libressl2.7-libtls-2.7.5-r0
