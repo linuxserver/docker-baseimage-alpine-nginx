@@ -1,6 +1,6 @@
 alpine-baselayout-3.1.0-r0
 alpine-keys-2.1-r1
-apache2-utils-2.4.39-r0
+apache2-utils-2.4.41-r0
 apk-tools-2.10.1-r0
 apr-1.6.3-r1
 apr-util-1.6.1-r3
@@ -33,7 +33,7 @@ ncurses-libs-6.1_p20180818-r1
 ncurses-terminfo-6.1_p20180818-r1
 ncurses-terminfo-base-6.1_p20180818-r1
 nghttp2-libs-1.32.0-r0
-nginx-1.14.2-r0
+nginx-1.14.2-r1
 openssl-1.0.2r-r0
 pcre-8.42-r0
 pcre2-10.31-r0
