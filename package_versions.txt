@@ -32,7 +32,7 @@ nano-2.9.8-r0
 ncurses-libs-6.1_p20180818-r1
 ncurses-terminfo-6.1_p20180818-r1
 ncurses-terminfo-base-6.1_p20180818-r1
-nghttp2-libs-1.32.0-r0
+nghttp2-libs-1.39.2-r0
 nginx-1.14.2-r1
 openssl-1.0.2r-r0
 pcre-8.42-r0
