@@ -35,7 +35,7 @@ ncurses-terminfo-6.1_p20190105-r0
 ncurses-terminfo-base-6.1_p20190105-r0
 nghttp2-libs-1.35.1-r1
 nginx-1.14.2-r4
-openssl-1.1.1b-r1
+openssl-1.1.1d-r0
 pcre-8.42-r1
 pcre2-10.32-r1
 php7-7.2.22-r0
