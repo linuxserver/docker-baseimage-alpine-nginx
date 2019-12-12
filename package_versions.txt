@@ -9,7 +9,7 @@ busybox-1.28.4-r3
 ca-certificates-20190108-r0
 coreutils-8.29-r2
 expat-2.2.8-r0
-git-2.18.1-r0
+git-2.18.2-r0
 libacl-2.2.52-r5
 libattr-2.4.47-r7
 libc-utils-0.7.1-r0
