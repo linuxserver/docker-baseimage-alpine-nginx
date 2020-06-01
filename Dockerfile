@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.11
+FROM lsiobase/alpine:3.12
 
 # install packages
 RUN \
@@ -6,7 +6,7 @@ RUN \
  apk add --no-cache \
 	apache2-utils \
 	git \
-	libressl3.0-libssl \
+	libressl3.1-libssl \
 	logrotate \
 	nano \
 	nginx \
