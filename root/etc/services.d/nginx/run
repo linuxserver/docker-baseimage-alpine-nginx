@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 if pgrep -f "[n]ginx:" > /dev/null; then
-  pkill [n]ginx:
+  pkill -ef [n]ginx:
 fi
 
 exec /usr/sbin/nginx -c /config/nginx/nginx.conf
