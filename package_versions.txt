@@ -16,7 +16,7 @@ libacl-2.2.53-r0
 libattr-2.4.48-r0
 libc-utils-0.7.2-r0
 libcrypto1.1-1.1.1g-r0
-libcurl-7.67.0-r0
+libcurl-7.67.0-r1
 libedit-20191211.3.1-r0
 libintl-0.20.1-r2
 libmagic-5.37-r1
