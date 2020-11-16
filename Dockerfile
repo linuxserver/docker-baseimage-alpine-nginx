@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.8
+FROM ghcr.io/linuxserver/baseimage-alpine:3.8
 
 # install packages
 RUN \
