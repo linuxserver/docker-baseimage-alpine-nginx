@@ -5,7 +5,7 @@ project_name: docker-baseimage-alpine-nginx
 external_type: os
 release_type: prerelease
 release_tag: "3.11"
-ls_branch: 3.11
+ls_branch: "3.11"
 repo_vars:
   - BUILD_VERSION_ARG = 'OS'
   - LS_USER = 'linuxserver'
