@@ -1,0 +1,22 @@
+name: Package Trigger Main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  package-trigger-3.9:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.3
+
+      - name: Package Trigger
+        if: github.ref == 'refs/heads/3.9'
+        run: |
+          if [ -n "${{ secrets.PAUSE_PACKAGE_TRIGGER_BASEIMAGE_ALPINE_NGINX_3.9 }}" ]; then
+            echo "Github secret PAUSE_PACKAGE_TRIGGER_BASEIMAGE_ALPINE_NGINX_3.9 is set; skipping trigger."
+            exit 0
+          fi
+          echo "Package trigger running off of 3.9 branch. To disable, set a Github secret named \"PAUSE_PACKAGE_TRIGGER_BASEIMAGE_ALPINE_NGINX_3.9\"."
+          curl -X POST \
+            https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-baseimage-alpine-nginx/job/3.9/buildWithParameters?PACKAGE_CHECK=true \
+            --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }}

@@ -1,0 +1,40 @@
+name: External Trigger Main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  external-trigger-3.9:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.3
+
+      - name: External Trigger
+        if: github.ref == 'refs/heads/3.9'
+        run: |
+          if [ -n "${{ secrets.PAUSE_EXTERNAL_TRIGGER_BASEIMAGE_ALPINE_NGINX_3.9 }}" ]; then
+            echo "Github secret PAUSE_EXTERNAL_TRIGGER_BASEIMAGE_ALPINE_NGINX_3.9 is set; skipping trigger."
+            exit 0
+          fi
+          echo "External trigger running off of 3.9 branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_BASEIMAGE_ALPINE_NGINX_3.9\"."
+          echo "Setting env vars"
+          BUILD_VERSION_ARG='OS'
+          LS_USER='linuxserver'
+          LS_REPO='docker-baseimage-alpine-nginx'
+          CONTAINER_NAME='baseimage-alpine-nginx'
+          DOCKERHUB_IMAGE='lsiobase/nginx'
+          DEV_DOCKERHUB_IMAGE='lsiodev/baseimage-nginx'
+          PR_DOCKERHUB_IMAGE='lspipepr/baseimage-nginx'
+          DIST_IMAGE='alpine'
+          MULTIARCH='true'
+          CI='true'
+          CI_WEB='true'
+          CI_PORT='80'
+          CI_SSL='true'
+          CI_DELAY='120'
+          CI_DOCKERENV='TZ=US/Pacific'
+          CI_AUTH='user:password'
+          CI_WEBPATH=''
+          echo "Retrieving external version"
+          echo "No external release, exiting."
+          exit 0
