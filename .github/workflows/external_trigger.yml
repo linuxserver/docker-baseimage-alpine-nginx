@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  external-trigger-3.8:
+  external-trigger-3-8:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.3
