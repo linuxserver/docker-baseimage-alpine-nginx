@@ -15,7 +15,7 @@ libacl-2.2.52-r5
 libattr-2.4.47-r7
 libc-utils-0.7.1-r0
 libcrypto1.1-1.1.1g-r0
-libcurl-7.64.0-r4
+libcurl-7.64.0-r5
 libedit-20181209.3.1-r0
 libmagic-5.36-r1
 libressl2.7-libcrypto-2.7.5-r0
@@ -36,7 +36,7 @@ ncurses-terminfo-base-6.1_p20190105-r0
 nghttp2-libs-1.35.1-r2
 nginx-1.14.2-r5
 openssl-1.1.1g-r0
-pcre-8.42-r1
+pcre-8.42-r2
 pcre2-10.32-r1
 php7-7.2.33-r0
 php7-common-7.2.33-r0
