@@ -12,5 +12,5 @@ jobs:
       - name: External Trigger
         if: github.ref == 'refs/heads/master'
         run: |
-          echo "No external release, exiting."
+          echo "**** No external release, exiting ****"
           exit 0
