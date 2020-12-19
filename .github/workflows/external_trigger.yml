@@ -12,5 +12,5 @@ jobs:
       - name: External Trigger
         if: github.ref == 'refs/heads/3.9'
         run: |
-          echo "No external release, exiting."
+          echo "**** No external release, exiting ****"
           exit 0
