@@ -11,7 +11,7 @@ ca-certificates-20191127-r2
 ca-certificates-cacert-20191127-r2
 coreutils-8.31-r0
 expat-2.2.8-r0
-git-2.22.4-r0
+git-2.22.5-r0
 libacl-2.2.52-r6
 libattr-2.4.48-r0
 libc-utils-0.7.1-r0
