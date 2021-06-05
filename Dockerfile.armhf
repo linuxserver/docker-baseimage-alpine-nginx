@@ -10,6 +10,7 @@ RUN \
 	logrotate \
 	nano \
 	nginx \
+	nginx-mod-http-brotli \
 	openssl \
 	php7 \
 	php7-fileinfo \
