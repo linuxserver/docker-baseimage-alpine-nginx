@@ -21,7 +21,7 @@
 
 ------------------------------
 
- - [ ] I have read the [contributing](https://github.com/linuxserver/docker-baseimage-alpine-nginx/blob/3.13-php8/.github/CONTRIBUTING.md) guideline and understand that I have made the correct modifications
+ - [ ] I have read the [contributing](https://github.com/linuxserver/docker-baseimage-alpine-nginx/blob/3.14-php8/.github/CONTRIBUTING.md) guideline and understand that I have made the correct modifications
 
 ------------------------------
 
