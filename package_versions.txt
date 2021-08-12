@@ -1,7 +1,7 @@
 alpine-baselayout-3.2.0-r16
 alpine-keys-2.3-r1
 apache2-utils-2.4.48-r0
-apk-tools-2.12.6-r0
+apk-tools-2.12.7-r0
 apr-1.7.0-r0
 apr-util-1.6.1-r7
 argon2-libs-20190702-r1
@@ -24,7 +24,7 @@ libmagic-5.40-r1
 libproc-3.3.17-r0
 libressl3.3-libcrypto-3.3.3-r0
 libressl3.3-libssl-3.3.3-r0
-libretls-3.3.3-r2
+libretls-3.3.3p1-r2
 libssl1.1-1.1.1k-r0
 libuuid-2.37-r0
 libxml2-2.9.12-r1
