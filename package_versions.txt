@@ -15,7 +15,7 @@ git-2.24.4-r0
 libacl-2.2.53-r0
 libattr-2.4.48-r0
 libc-utils-0.7.2-r0
-libcrypto1.1-1.1.1k-r0
+libcrypto1.1-1.1.1l-r0
 libcurl-7.67.0-r5
 libedit-20191211.3.1-r0
 libintl-0.20.1-r2
@@ -23,7 +23,7 @@ libmagic-5.37-r1
 libproc-3.3.16-r0
 libressl3.0-libcrypto-3.0.2-r0
 libressl3.0-libssl-3.0.2-r0
-libssl1.1-1.1.1k-r0
+libssl1.1-1.1.1l-r0
 libtls-standalone-2.9.1-r0
 libuuid-2.34-r1
 libxml2-2.9.12-r0
