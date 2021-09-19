@@ -36,14 +36,11 @@ if [ ! -e /etc/nginx/conf.d ]; then
     ln -s /etc/nginx/http.d /etc/nginx/conf.d
 fi
 
-# permissions
-find /var/lib/nginx \
-    -not -group abc -not -user abc -print0 | xargs -P 0 -0 --no-run-if-empty chown --no-dereference abc:abc
-find /config \
-    -not -group abc -not -user abc -print0 | xargs -P 0 -0 --no-run-if-empty chown --no-dereference abc:abc
-find /var/tmp/nginx \
+# permissions
+find /config /var/lib/nginx /var/tmp/nginx \
     -not -group abc -not -user abc -print0 | xargs -P 0 -0 --no-run-if-empty chown --no-dereference abc:abc
 
-chmod -R g+w \
-    /config/{nginx,www}
+find /config/nginx /config/www \
+    -not -type l -not -perm -g=w -print0 | xargs -P 0 -0 --no-run-if-empty chmod g+w
+
 chmod -R 644 /etc/logrotate.d
