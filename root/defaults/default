@@ -1,4 +1,4 @@
-## Version 2021/10/05 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/default
+## Version 2021/10/14 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/default
 
 server {
     listen 80 default_server;
@@ -31,6 +31,3 @@ server {
         include /etc/nginx/fastcgi_params;
     }
 }
-
-# enable proxy cache for auth
-proxy_cache_path cache/ keys_zone=auth_cache:10m;
