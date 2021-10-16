@@ -7,13 +7,17 @@ mkdir -p \
     /var/lib/nginx/tmp/client_body \
     /var/tmp/nginx
 
+# move default to default.conf
+[[ -f /config/nginx/site-confs/default && ! -f /config/nginx/site-confs/default.conf ]] && \
+    mv /config/nginx/site-confs/default /config/nginx/site-confs/default.conf
+
 # copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && \
     cp /defaults/nginx.conf /config/nginx/nginx.conf
 [[ ! -f /config/nginx/ssl.conf ]] && \
     cp /defaults/ssl.conf /config/nginx/ssl.conf
-[[ ! -f /config/nginx/site-confs/default ]] && \
-    cp /defaults/default /config/nginx/site-confs/default
+[[ ! -f /config/nginx/site-confs/default.conf ]] && \
+    cp /defaults/default.conf /config/nginx/site-confs/default.conf
 [[ $(find /config/www -type f | wc -l) -eq 0 ]] && \
     cp /defaults/index.html /config/www/index.html
 
