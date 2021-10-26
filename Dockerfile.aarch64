@@ -23,7 +23,11 @@ RUN \
     php8-xmlwriter \
     php8-zlib && \
   echo "**** configure nginx ****" && \
-  echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
+  echo 'fastcgi_param  HTTP_PROXY         ""; # https://httpoxy.org/' >> \
+    /etc/nginx/fastcgi_params && \
+  echo 'fastcgi_param  PATH_INFO          $fastcgi_path_info; # http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_split_path_info' >> \
+    /etc/nginx/fastcgi_params && \
+  echo 'fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name; # https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/#connecting-nginx-to-php-fpm' >> \
     /etc/nginx/fastcgi_params && \
   rm -f /etc/nginx/http.d/default.conf && \
   echo "**** fix logrotate ****" && \
