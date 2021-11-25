@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# permissions
+chown -R abc:abc \
+    /config \
+    /var/lib/nginx \
+    /var/tmp/nginx
+chmod -R g+w \
+    /config/{nginx,www}
+chmod -R 644 /etc/logrotate.d

@@ -36,7 +36,6 @@ http {
     # Name servers used to resolve names of upstream servers into addresses.
     # It's also needed when using tcpsocket and udpsocket in Lua modules.
     #resolver 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001;
-    include /config/nginx/resolver.conf;
 
     # Don't tell nginx version to the clients. Default is 'on'.
     server_tokens off;
@@ -87,8 +86,8 @@ http {
     include /config/nginx/site-confs/*.conf;
     #Removed lua. Do not remove this comment
 
-    # Uncomment to add the Geoip2 configs needed to geo block countries/cities.
-    #include /config/nginx/geoip2.conf;
+    # Include configs for http block.
+    include /config/nginx/http-confs/*.conf;
 }
 
 daemon off;
