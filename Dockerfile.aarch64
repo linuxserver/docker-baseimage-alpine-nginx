@@ -11,17 +11,17 @@ RUN \
     nano \
     nginx \
     openssl \
-    php7 \
-    php7-fileinfo \
-    php7-fpm \
-    php7-json \
-    php7-mbstring \
-    php7-openssl \
-    php7-session \
-    php7-simplexml \
-    php7-xml \
-    php7-xmlwriter \
-    php7-zlib && \
+    php8 \
+    php8-fileinfo \
+    php8-fpm \
+    php8-json \
+    php8-mbstring \
+    php8-openssl \
+    php8-session \
+    php8-simplexml \
+    php8-xml \
+    php8-xmlwriter \
+    php8-zlib && \
   echo "**** configure nginx ****" && \
   echo 'fastcgi_param  HTTP_PROXY         ""; # https://httpoxy.org/' >> \
     /etc/nginx/fastcgi_params && \
