@@ -12,7 +12,9 @@ if ! grep -q 'resolver' /config/nginx/http-confs/resolver.conf; then
         RESOLVER="127.0.0.11"
     fi
     echo "Setting resolver to ${RESOLVER}"
-    echo -e "# This file is auto-generated only on first start, based on the container's /etc/resolv.conf file. Feel free to modify it as you wish.\n\nresolver ${RESOLVER} valid=30s;" > /config/nginx/http-confs/resolver.conf
+    RESOLVEROUTPUT="# This file is auto-generated only on first start, based on the container's /etc/resolv.conf file. Feel free to modify it as you wish.\n\nresolver ${RESOLVER} valid=30s;"
+    echo -e "${RESOLVEROUTPUT}" > /config/nginx/http-confs/resolver.conf
+    echo -e "${RESOLVEROUTPUT}" > /config/nginx/location-confs/resolver.conf
 fi
 
 # Set worker_processes
