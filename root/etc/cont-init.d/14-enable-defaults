@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-# copy config files
-[[ ! -f /config/nginx/nginx.conf ]] && \
-    cp /defaults/nginx/nginx.conf.sample /config/nginx/nginx.conf
-[[ ! -f /config/nginx/site-confs/default.conf ]] && \
-    cp /defaults/nginx/site-confs/default.conf.sample /config/nginx/site-confs/default.conf
-[[ $(find /config/www -type f | wc -l) -eq 0 ]] && \
-    cp /defaults/www/index.html /config/www/index.html

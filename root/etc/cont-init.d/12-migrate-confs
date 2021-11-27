@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-# shellcheck source=/dev/null
-source /defaults/migrate.sh
-
-migrate "/config/nginx/site-confs/default" "/config/nginx/site-confs/default.conf"
-migrate "/config/nginx/resolver.conf" "/config/nginx/http-confs/resolver.conf"
-migrate "/config/nginx/ssl.conf" "/config/nginx/server-confs/ssl.conf"
