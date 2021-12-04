@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 
 # install packages
 RUN \
@@ -6,7 +6,7 @@ RUN \
   apk add --no-cache \
     apache2-utils \
     git \
-    libressl3.3-libssl \
+    libressl3.4-libssl \
     logrotate \
     nano \
     nginx \
