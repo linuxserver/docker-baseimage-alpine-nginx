@@ -35,7 +35,7 @@ cp /config/php/www2.conf /etc/php8/php-fpm.d/www2.conf
 if [ ! -e /etc/nginx/conf.d ]; then
     ln -s /etc/nginx/http.d /etc/nginx/conf.d
 fi
-[[ ! -d /usr/bin/php ]] && \
+[[ ! -e /usr/bin/php ]] && \
     ln -s /usr/bin/php8 /usr/bin/php
 
 # permissions
