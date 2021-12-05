@@ -23,7 +23,16 @@ migrate "/config/nginx/site-confs/default" "/config/nginx/site-confs/default.con
     cp /defaults/nginx/nginx.conf.sample /config/nginx/nginx.conf
 [[ ! -f /config/nginx/site-confs/default.conf ]] && \
     cp /defaults/nginx/site-confs/default.conf.sample /config/nginx/site-confs/default.conf
-[[ ! -f /config/www/index.html ]] && grep -Eq '^\s*index[^#]*index\.html' /config/nginx/**/*.conf && \
+
+# copy index.html if no index file exists
+INDEX_EXISTS=false
+for file in /config/www/index.*; do
+    if [[ -e "${file}" ]]; then
+        INDEX_EXISTS=true
+        break
+    fi
+done
+[[ ${INDEX_EXISTS} == false ]] && grep -Eq '^\s*index[^#]*index\.html' /config/nginx/**/*.conf && \
     cp /defaults/www/index.html /config/www/index.html
 
 # copy pre-generated dhparams or generate if needed
