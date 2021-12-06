@@ -29,6 +29,8 @@ RUN \
     /etc/nginx/fastcgi_params && \
   echo 'fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name; # https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/#connecting-nginx-to-php-fpm' >> \
     /etc/nginx/fastcgi_params && \
+  echo 'fastcgi_param  SERVER_NAME        $host; # Send HTTP_HOST as SERVER_NAME. If HTTP_HOST is blank, send the value of server_name from nginx (default is `_`)' >> \
+    /etc/nginx/fastcgi_params && \
   rm -f /etc/nginx/http.d/default.conf && \
   echo "**** fix logrotate ****" && \
   sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf && \
