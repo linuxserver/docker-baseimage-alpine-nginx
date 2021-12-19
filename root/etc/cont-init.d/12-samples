@@ -19,9 +19,3 @@ cp \
 cp \
     /defaults/nginx/site-confs/*.conf.sample \
     /config/nginx/site-confs/
-cp \
-    /defaults/nginx/subdomain-confs/*.conf.sample \
-    /config/nginx/subdomain-confs/
-cp \
-    /defaults/nginx/subfolder-confs/*.conf.sample \
-    /config/nginx/subfolder-confs/
