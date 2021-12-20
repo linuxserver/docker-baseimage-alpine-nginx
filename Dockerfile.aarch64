@@ -11,23 +11,25 @@ RUN \
     nano \
     nginx \
     openssl \
-    php7 \
-    php7-fileinfo \
-    php7-fpm \
-    php7-json \
-    php7-mbstring \
-    php7-openssl \
-    php7-session \
-    php7-simplexml \
-    php7-xml \
-    php7-xmlwriter \
-    php7-zlib && \
+    php8 \
+    php8-fileinfo \
+    php8-fpm \
+    php8-json \
+    php8-mbstring \
+    php8-openssl \
+    php8-session \
+    php8-simplexml \
+    php8-xml \
+    php8-xmlwriter \
+    php8-zlib && \
   echo "**** configure nginx ****" && \
   echo 'fastcgi_param  HTTP_PROXY         ""; # https://httpoxy.org/' >> \
     /etc/nginx/fastcgi_params && \
   echo 'fastcgi_param  PATH_INFO          $fastcgi_path_info; # http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_split_path_info' >> \
     /etc/nginx/fastcgi_params && \
   echo 'fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name; # https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/#connecting-nginx-to-php-fpm' >> \
+    /etc/nginx/fastcgi_params && \
+  echo 'fastcgi_param  SERVER_NAME        $host; # Send HTTP_HOST as SERVER_NAME. If HTTP_HOST is blank, send the value of server_name from nginx (default is `_`)' >> \
     /etc/nginx/fastcgi_params && \
   rm -f /etc/nginx/http.d/default.conf && \
   echo "**** fix logrotate ****" && \

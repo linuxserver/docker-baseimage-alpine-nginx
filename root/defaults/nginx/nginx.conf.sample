@@ -1,0 +1,94 @@
+## Version 2021/11/25 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx.conf.sample
+
+### Based on alpine defaults
+# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.14-stable
+
+user abc;
+
+# Set number of worker processes automatically based on number of CPU cores.
+include /config/nginx/worker_processes.conf;
+
+# Enables the use of JIT for regular expressions to speed-up their processing.
+pcre_jit on;
+
+# Configures default error logger.
+error_log /config/log/nginx/error.log;
+
+# Includes files with directives to load dynamic modules.
+include /etc/nginx/modules/*.conf;
+
+# Uncomment to include files with config snippets into the root context.
+# NOTE: This will be enabled by default in Alpine 3.15.
+#include /etc/nginx/conf.d/*.conf;
+
+events {
+    # The maximum number of simultaneous connections that can be opened by
+    # a worker process.
+    worker_connections 1024;
+}
+
+http {
+    # Includes mapping of file name extensions to MIME types of responses
+    # and defines the default type.
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    # Name servers used to resolve names of upstream servers into addresses.
+    # It's also needed when using tcpsocket and udpsocket in Lua modules.
+    #resolver 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001;
+
+    # Don't tell nginx version to the clients. Default is 'on'.
+    server_tokens off;
+
+    # Specifies the maximum accepted body size of a client request, as
+    # indicated by the request header Content-Length. If the stated content
+    # length is greater than this size, then the client receives the HTTP
+    # error code 413. Set to 0 to disable. Default is '1m'.
+    client_max_body_size 0;
+
+    # Sendfile copies data between one FD and other from within the kernel,
+    # which is more efficient than read() + write(). Default is off.
+    sendfile on;
+
+    # Causes nginx to attempt to send its HTTP response head in one packet,
+    # instead of using partial frames. Default is 'off'.
+    tcp_nopush on;
+
+    # Enable gzipping of responses.
+    #gzip on;
+
+    # Set the Vary HTTP header as defined in the RFC 2616. Default is 'off'.
+    gzip_vary on;
+
+
+    # Helper variable for proxying websockets.
+    map $http_upgrade $connection_upgrade {
+        default upgrade;
+        '' close;
+    }
+
+    # Sets the path, format, and configuration for a buffered log write.
+    access_log /config/log/nginx/access.log;
+
+    ### Linuxserver.io Defaults
+
+    client_body_buffer_size 128k; # default: client_body_buffer_size 8k|16k;
+    #keepalive_timeout 75s; # default: keepalive_timeout 75s;
+    large_client_header_buffers 4 16k; # default: large_client_header_buffers 4 8k;
+    send_timeout 5m; # default: send_timeout 60s;
+    #server_name_in_redirect off; # default: server_name_in_redirect off;
+    #server_names_hash_bucket_size 64; # default: server_names_hash_bucket_size 32|64|128;
+    #tcp_nodelay on; # default: tcp_nodelay on;
+    types_hash_max_size 2048; # default: types_hash_max_size 1024;
+    variables_hash_max_size 2048; # default: variables_hash_max_size 1024;
+
+    # Includes virtual hosts configs.
+    include /config/nginx/site-confs/*.conf;
+    #Removed lua. Do not remove this comment
+
+    # Include configs for http block.
+    include /config/nginx/http-confs/*.conf;
+}
+
+daemon off;
+pid /run/nginx.pid;

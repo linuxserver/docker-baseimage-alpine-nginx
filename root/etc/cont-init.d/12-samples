@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+
+# remove old samples
+find /config/nginx/ -name "*.conf.sample" -type f -delete
+
+# copy new samples
+cp \
+    /defaults/nginx/*.conf.sample \
+    /config/nginx/
+cp \
+    /defaults/nginx/http-confs/*.conf.sample \
+    /config/nginx/http-confs/
+cp \
+    /defaults/nginx/location-confs/*.conf.sample \
+    /config/nginx/location-confs/
+cp \
+    /defaults/nginx/server-confs/*.conf.sample \
+    /config/nginx/server-confs/
+cp \
+    /defaults/nginx/site-confs/*.conf.sample \
+    /config/nginx/site-confs/

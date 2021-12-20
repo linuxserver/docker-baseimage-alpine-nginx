@@ -1,0 +1,26 @@
+#!/usr/bin/with-contenv bash
+
+# symlink php binary
+[[ ! -e /usr/bin/php ]] && \
+    ln -s /usr/bin/php8 /usr/bin/php
+
+# create local php.ini if it doesn't exist, set local timezone
+[[ ! -f /config/php/php-local.ini ]] && \
+    printf "; Edit this file to override php.ini directives and restart the container\\n\\ndate.timezone = %s\\n" "$TZ" > /config/php/php-local.ini
+
+# copy user php-local.ini to image
+cp /config/php/php-local.ini /etc/php8/conf.d/php-local.ini
+
+#fix php-fpm log location
+sed -i "s#;error_log = log/php8/error.log.*#error_log = /config/log/php/error.log#g" /etc/php8/php-fpm.conf
+
+#fix php-fpm user
+sed -i "s#user = nobody.*#user = abc#g" /etc/php8/php-fpm.d/www.conf
+sed -i "s#group = nobody.*#group = abc#g" /etc/php8/php-fpm.d/www.conf
+
+# create override for www.conf if it doesn't exist
+[[ ! -f /config/php/www2.conf ]] && \
+    printf "; Edit this file to override www.conf and php-fpm.conf directives and restart the container\\n\\n; Pool name\\n[www]\\n\\n" > /config/php/www2.conf
+
+# copy user www2.conf to image
+cp /config/php/www2.conf /etc/php8/php-fpm.d/www2.conf

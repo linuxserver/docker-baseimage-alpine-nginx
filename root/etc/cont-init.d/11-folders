@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+    /config/{keys,php,www} \
+    /config/log/{nginx,php} \
+    /config/nginx/{http-confs,location-confs,server-confs,site-confs} \
+    /run \
+    /var/lib/nginx/tmp/client_body \
+    /var/tmp/nginx

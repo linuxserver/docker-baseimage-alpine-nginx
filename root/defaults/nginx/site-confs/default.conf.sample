@@ -1,0 +1,43 @@
+## Version 2021/11/25 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+
+server {
+    include /config/nginx/server-confs/*.conf;
+
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+
+    set $root /app/www/public;
+    if (!-d /app/www/public) {
+        set $root /config/www;
+    }
+    root $root;
+    index index.html index.htm index.php;
+
+    set $htpasswd_file /config/nginx/.htpasswd;
+    set $auth_basic "Restricted";
+    if (!-f $htpasswd_file) {
+        set $auth_basic off;
+    }
+    location / {
+        include /config/nginx/location-confs/*.conf;
+
+        auth_basic $auth_basic;
+        auth_basic_user_file $htpasswd_file;
+
+        try_files $uri $uri/ /index.html /index.php?$args =404;
+    }
+
+    location ~ ^(.+\.php)(.*)$ {
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    # deny access to .htaccess/.htpasswd files
+    location ~ /\.ht {
+        deny all;
+    }
+}
