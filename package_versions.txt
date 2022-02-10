@@ -26,7 +26,7 @@ libressl3.1-libcrypto-3.1.5-r0
 libressl3.1-libssl-3.1.5-r0
 libssl1.1-1.1.1l-r0
 libtls-standalone-2.9.1-r1
-libuuid-2.36.1-r1
+libuuid-2.37.3-r0
 libxml2-2.9.12-r0
 linux-pam-1.5.1-r0
 logrotate-3.18.0-r1
