@@ -32,8 +32,17 @@ RUN \
   echo 'fastcgi_param  SERVER_NAME        $host; # Send HTTP_HOST as SERVER_NAME. If HTTP_HOST is blank, send the value of server_name from nginx (default is `_`)' >> \
     /etc/nginx/fastcgi_params && \
   rm -f /etc/nginx/http.d/default.conf && \
+  echo "**** configure php ****" && \
+  ln -s /usr/bin/php8 /usr/bin/php && \
+  sed -i "s#;error_log = log/php8/error.log.*#error_log = /config/log/php/error.log#g" \
+    /etc/php8/php-fpm.conf && \
+  sed -i "s#user = nobody.*#user = abc#g" \
+    /etc/php8/php-fpm.d/www.conf && \
+  sed -i "s#group = nobody.*#group = abc#g" \
+    /etc/php8/php-fpm.d/www.conf && \
   echo "**** fix logrotate ****" && \
-  sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf && \
+  sed -i "s#/var/log/messages {}.*# #g" \
+    /etc/logrotate.conf && \
   sed -i 's#/usr/sbin/logrotate /etc/logrotate.conf#/usr/sbin/logrotate /etc/logrotate.conf -s /config/log/logrotate.status#g' \
     /etc/periodic/daily/logrotate
 
@@ -42,4 +51,3 @@ COPY root/ /
 
 # ports and volumes
 EXPOSE 80 443
-VOLUME /config
