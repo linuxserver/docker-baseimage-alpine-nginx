@@ -8,6 +8,9 @@ if [[ ! -f /config/nginx/site-confs/default.conf ]]; then
     cp /defaults/nginx/site-confs/default.conf.sample /config/nginx/site-confs/default.conf
 fi
 
+# force nginx.conf to include site-confs/*.conf instead of site-confs/*
+sed -i -E "s#^(\s*)include /config/nginx/site-confs/\*;#\1include /config/nginx/site-confs/\*.conf;#" /config/nginx/nginx.conf
+
 # copy index.html if no index file exists
 INDEX_EXISTS=false
 for file in /config/www/index.*; do
