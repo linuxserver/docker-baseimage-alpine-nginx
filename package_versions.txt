@@ -28,7 +28,7 @@ libssl1.1-1.1.1o-r0
 libuuid-2.37.4-r0
 libxml2-2.9.14-r0
 linux-pam-1.5.2-r0
-logrotate-3.18.1-r1
+logrotate-3.18.1-r2
 musl-1.2.2-r7
 musl-utils-1.2.2-r7
 nano-5.9-r0
