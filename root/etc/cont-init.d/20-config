@@ -44,3 +44,6 @@ chown -R abc:abc \
 chmod -R g+w \
     /config/{nginx,www}
 chmod -R 644 /etc/logrotate.d
+if [ -f "/config/log/logrotate.status" ]; then
+    chmod 600 /config/log/logrotate.status
+fi
