@@ -1,7 +1,7 @@
-## Version 2021/11/25 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx.conf.sample
+## Version 2022/07/23 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx.conf.sample
 
 ### Based on alpine defaults
-# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.14-stable
+# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.16-stable
 
 user abc;
 
@@ -36,6 +36,7 @@ http {
     # Name servers used to resolve names of upstream servers into addresses.
     # It's also needed when using tcpsocket and udpsocket in Lua modules.
     #resolver 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001;
+    include /config/nginx/resolver.conf;
 
     # Don't tell nginx version to the clients. Default is 'on'.
     server_tokens off;
@@ -54,12 +55,49 @@ http {
     # instead of using partial frames. Default is 'off'.
     tcp_nopush on;
 
+    ### Mozilla Recommendations
+    # generated 2022-07-23, Mozilla Guideline v5.6, nginx 1.17.7, OpenSSL 1.1.1k, intermediate configuration
+    # https://ssl-config.mozilla.org/#server=nginx&version=1.17.7&config=intermediate&openssl=1.1.1k&guideline=5.6
+
+    ssl_certificate /config/keys/cert.crt;
+    ssl_certificate_key /config/keys/cert.key;
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:MozSSL:10m; # about 40000 sessions
+    ssl_session_tickets off;
+
+    # curl https://ssl-config.mozilla.org/ffdhe2048.txt > /path/to/dhparam
+    ssl_dhparam /config/nginx/dhparams.pem;
+
+    # intermediate configuration
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+
+    # HSTS (ngx_http_headers_module is required) (63072000 seconds)
+    #add_header Strict-Transport-Security "max-age=63072000" always;
+
+    # OCSP stapling
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    # verify chain of trust of OCSP response using Root CA and Intermediate certs
+    ssl_trusted_certificate /config/keys/cert.crt;
+
+    # Optional additional headers
+    #add_header Cache-Control "no-transform" always;
+    #add_header Content-Security-Policy "upgrade-insecure-requests; frame-ancestors 'self'";
+    #add_header Permissions-Policy "interest-cohort=()";
+    #add_header Referrer-Policy "same-origin" always;
+    #add_header X-Content-Type-Options "nosniff" always;
+    #add_header X-Frame-Options "SAMEORIGIN" always;
+    #add_header X-UA-Compatible "IE=Edge" always;
+    #add_header X-XSS-Protection "1; mode=block" always;
+
     # Enable gzipping of responses.
     #gzip on;
 
     # Set the Vary HTTP header as defined in the RFC 2616. Default is 'off'.
     gzip_vary on;
-
 
     # Helper variable for proxying websockets.
     map $http_upgrade $connection_upgrade {
@@ -70,24 +108,9 @@ http {
     # Sets the path, format, and configuration for a buffered log write.
     access_log /config/log/nginx/access.log;
 
-    ### Linuxserver.io Defaults
-
-    client_body_buffer_size 128k; # default: client_body_buffer_size 8k|16k;
-    #keepalive_timeout 75s; # default: keepalive_timeout 75s;
-    large_client_header_buffers 4 16k; # default: large_client_header_buffers 4 8k;
-    send_timeout 5m; # default: send_timeout 60s;
-    #server_name_in_redirect off; # default: server_name_in_redirect off;
-    #server_names_hash_bucket_size 64; # default: server_names_hash_bucket_size 32|64|128;
-    #tcp_nodelay on; # default: tcp_nodelay on;
-    types_hash_max_size 2048; # default: types_hash_max_size 1024;
-    variables_hash_max_size 2048; # default: variables_hash_max_size 1024;
-
     # Includes virtual hosts configs.
     include /config/nginx/site-confs/*.conf;
     #Removed lua. Do not remove this comment
-
-    # Include configs for http block.
-    include /config/nginx/http-confs/*.conf;
 }
 
 daemon off;

@@ -4,7 +4,7 @@
 mkdir -p \
     /config/{keys,php,www} \
     /config/log/{nginx,php} \
-    /config/nginx/{http-confs,location-confs,server-confs,site-confs} \
+    /config/nginx/site-confs \
     /run \
     /var/lib/nginx/tmp/client_body \
     /var/tmp/nginx
