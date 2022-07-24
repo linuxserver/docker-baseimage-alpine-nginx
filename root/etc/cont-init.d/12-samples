@@ -13,9 +13,10 @@ find /defaults/nginx/ \
     -type f \
     -exec cp "{}" /config/nginx/ +
 
-[[ -d /defaults/nginx/site-confs/ ]] &&
+if [[ -d /defaults/nginx/site-confs/ ]]; then
     find /defaults/nginx/site-confs/ \
         -maxdepth 1 \
         -name "*.conf.sample" \
         -type f \
         -exec cp "{}" /config/nginx/site-confs/ +
+fi
