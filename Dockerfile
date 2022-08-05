@@ -33,6 +33,7 @@ RUN \
     /etc/nginx/fastcgi_params && \
   rm -f /etc/nginx/http.d/default.conf && \
   echo "**** configure php ****" && \
+  ln -s /usr/bin/php8 /usr/bin/php && \
   sed -i "s#;error_log = log/php8/error.log.*#error_log = /config/log/php/error.log#g" \
     /etc/php8/php-fpm.conf && \
   sed -i "s#user = nobody.*#user = abc#g" \
