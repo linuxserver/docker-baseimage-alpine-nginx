@@ -22,8 +22,7 @@ for file in /config/www/index.*; do
         break
     fi
 done
-if [[ ${INDEX_EXISTS} == false ]]; then
-    grep -Eq '^\s*index[^#]*index\.html' /config/nginx/**/*.conf
+if [[ ${INDEX_EXISTS} == false ]] && grep -Eq '^\s*index[^#]*index\.html' /config/nginx/**/*.conf; then
     cp /defaults/www/index.html /config/www/index.html
 fi
 
