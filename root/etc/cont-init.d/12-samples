@@ -13,30 +13,10 @@ find /defaults/nginx/ \
     -type f \
     -exec cp "{}" /config/nginx/ +
 
-[[ -d /defaults/nginx/http-confs/ ]] &&
-    find /defaults/nginx/http-confs/ \
-        -maxdepth 1 \
-        -name "*.conf.sample" \
-        -type f \
-        -exec cp "{}" /config/nginx/http-confs/ +
-
-[[ -d /defaults/nginx/location-confs/ ]] &&
-    find /defaults/nginx/location-confs/ \
-        -maxdepth 1 \
-        -name "*.conf.sample" \
-        -type f \
-        -exec cp "{}" /config/nginx/location-confs/ +
-
-[[ -d /defaults/nginx/server-confs/ ]] &&
-    find /defaults/nginx/server-confs/ \
-        -maxdepth 1 \
-        -name "*.conf.sample" \
-        -type f \
-        -exec cp "{}" /config/nginx/server-confs/ +
-
-[[ -d /defaults/nginx/site-confs/ ]] &&
+if [[ -d /defaults/nginx/site-confs/ ]]; then
     find /defaults/nginx/site-confs/ \
         -maxdepth 1 \
         -name "*.conf.sample" \
         -type f \
         -exec cp "{}" /config/nginx/site-confs/ +
+fi

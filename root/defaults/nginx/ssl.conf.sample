@@ -1,11 +1,8 @@
-## Version 2021/11/25 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/server-confs/ssl.conf.sample
+## Version 2022/08/05 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/ssl.conf.sample
 
 ### Mozilla Recommendations
-# generated 2021-10-16, Mozilla Guideline v5.6, nginx 1.20.1-r3, OpenSSL 1.1.1l-r0, intermediate configuration
-# https://ssl-config.mozilla.org/#server=nginx&version=1.20.1-r3&config=intermediate&openssl=1.1.1l-r0&guideline=5.6
-
-listen 443 ssl http2;
-listen [::]:443 ssl http2;
+# generated 2022-08-05, Mozilla Guideline v5.6, nginx 1.17.7, OpenSSL 1.1.1k, intermediate configuration
+# https://ssl-config.mozilla.org/#server=nginx&version=1.17.7&config=intermediate&openssl=1.1.1k&guideline=5.6
 
 ssl_certificate /config/keys/cert.crt;
 ssl_certificate_key /config/keys/cert.key;
@@ -30,11 +27,6 @@ ssl_stapling_verify on;
 
 # verify chain of trust of OCSP response using Root CA and Intermediate certs
 ssl_trusted_certificate /config/keys/cert.crt;
-
-### Linuxserver.io Defaults
-
-# Enable TLS 1.3 early data
-ssl_early_data on;
 
 # Optional additional headers
 #add_header Cache-Control "no-transform" always;
