@@ -17,9 +17,8 @@ error_log /config/log/nginx/error.log;
 # Includes files with directives to load dynamic modules.
 include /etc/nginx/modules/*.conf;
 
-# Uncomment to include files with config snippets into the root context.
-# NOTE: This will be enabled by default in Alpine 3.15.
-#include /etc/nginx/conf.d/*.conf;
+# Include files with config snippets into the root context.
+include /etc/nginx/conf.d/*.conf;
 
 events {
     # The maximum number of simultaneous connections that can be opened by
@@ -74,8 +73,8 @@ http {
     access_log /config/log/nginx/access.log;
 
     # Includes virtual hosts configs.
+    include /etc/nginx/http.d/*.conf;
     include /config/nginx/site-confs/*.conf;
-    #Removed lua. Do not remove this comment
 }
 
 daemon off;
