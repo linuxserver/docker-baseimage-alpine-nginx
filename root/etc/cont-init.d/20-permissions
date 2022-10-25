@@ -5,8 +5,10 @@ chown -R abc:abc \
     /config \
     /var/lib/nginx \
     /var/tmp/nginx
-chmod -R g+w \
-    /config/{nginx,www}
+
+# Potentially big dirs: Set permissions in parallel and only writing to inodes that need it
+find /config/{nginx,www} -print0 | xargs -P "$(nproc)" -I {} -0 chmod g+w {}
+
 chmod -R 644 /etc/logrotate.d
 if [ -f "/config/log/logrotate.status" ]; then
     chmod 600 /config/log/logrotate.status
