@@ -1,3 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-exec /usr/sbin/php-fpm8 -F
