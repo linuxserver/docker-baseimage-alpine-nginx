@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 # detect nginx configs with dates not matching the provided sample files
 active_confs=$(find /config/nginx/ -name "*.conf" -type f 2>/dev/null)
