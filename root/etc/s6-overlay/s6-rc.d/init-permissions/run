@@ -2,12 +2,19 @@
 
 # permissions
 chown -R abc:abc \
-    /config \
     /var/lib/nginx \
     /var/tmp/nginx
+
+find /config -path /config/www -prune -o -exec chown abc:abc {} +
+
+chown abc:abc \
+    /config/www
+
 chmod -R g+w \
-    /config/{nginx,www}
+    /config/nginx
+
 chmod -R 644 /etc/logrotate.d
-if [ -f "/config/log/logrotate.status" ]; then
+
+if [[ -f "/config/log/logrotate.status" ]]; then
     chmod 600 /config/log/logrotate.status
 fi
