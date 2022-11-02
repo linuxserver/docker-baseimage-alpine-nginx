@@ -8,7 +8,7 @@
         missingok
         sharedscripts
         postrotate
-                s6-svc -h /var/run/s6/services/nginx
+                s6-svc -h /run/service/svc-nginx
         endscript
         su abc abc
 }
