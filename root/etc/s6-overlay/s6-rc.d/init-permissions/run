@@ -13,7 +13,7 @@ lsiown -R abc:abc \
 
 lsiown abc:abc \
     /config/www \
-    /config/logs
+    /config/log
 
 chmod -R g+w \
     /config/nginx
