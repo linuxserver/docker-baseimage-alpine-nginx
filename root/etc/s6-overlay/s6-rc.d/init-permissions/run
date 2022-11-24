@@ -2,14 +2,18 @@
 # shellcheck shell=bash
 
 # permissions
-chown -R abc:abc \
+lsiown -R abc:abc \
     /var/lib/nginx \
     /var/tmp/nginx
 
-find /config -path /config/www -prune -o -exec chown abc:abc {} +
+lsiown -R abc:abc \
+    /config/keys \
+    /config/nginx \
+    /config/php
 
-chown abc:abc \
-    /config/www
+lsiown abc:abc \
+    /config/www \
+    /config/logs
 
 chmod -R g+w \
     /config/nginx
