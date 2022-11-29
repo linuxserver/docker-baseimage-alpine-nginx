@@ -7,7 +7,7 @@ if [[ ! -f /config/php/php-local.ini ]]; then
 fi
 
 # copy user php-local.ini to image
-cp /config/php/php-local.ini /etc/php8/conf.d/php-local.ini
+cp /config/php/php-local.ini /etc/php81/conf.d/php-local.ini
 
 # create override for www.conf if it doesn't exist
 if [[ ! -f /config/php/www2.conf ]]; then
@@ -15,4 +15,4 @@ if [[ ! -f /config/php/www2.conf ]]; then
 fi
 
 # copy user www2.conf to image
-cp /config/php/www2.conf /etc/php8/php-fpm.d/www2.conf
+cp /config/php/www2.conf /etc/php81/php-fpm.d/www2.conf
