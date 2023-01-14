@@ -35,6 +35,16 @@ if ! grep -q 'PARAMETERS' "/config/nginx/dhparams.pem"; then
     curl -o /config/nginx/dhparams.pem -L "https://ssl-config.mozilla.org/ffdhe4096.txt"
 fi
 
+# Set real_ip
+touch /config/nginx/real_ip.conf
+echo "Setting up real_ip.conf"
+ip route | grep -v default | awk '{print $1}' | while IFS= read -r line; do
+    REAL_IP_LINE="set_real_ip_from ${line};"
+    if ! grep -q "${REAL_IP_LINE}" /config/nginx/real_ip.conf; then
+        echo "${REAL_IP_LINE}" >>/config/nginx/real_ip.conf
+    fi
+done
+
 # Set resolver, ignore ipv6 addresses
 touch /config/nginx/resolver.conf
 if ! grep -q 'resolver' /config/nginx/resolver.conf; then
