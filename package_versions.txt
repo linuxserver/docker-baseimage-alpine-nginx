@@ -3,7 +3,7 @@ alpine-baselayout-data-3.2.0-r23
 alpine-keys-2.4-r1
 apache2-utils-2.4.55-r0
 apk-tools-2.12.9-r3
-apr-1.7.0-r2
+apr-1.7.1-r0
 apr-util-1.6.1-r12
 argon2-libs-20190702-r1
 bash-5.1.16-r2
