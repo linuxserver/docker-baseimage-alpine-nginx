@@ -1,64 +1,68 @@
-alpine-baselayout-3.2.0-r18
-alpine-keys-2.4-r1
-apache2-utils-2.4.55-r0
-apk-tools-2.12.7-r3
-apr-1.7.2-r0
-apr-util-1.6.3-r0
-argon2-libs-20190702-r1
-bash-5.1.16-r0
-brotli-libs-1.0.9-r5
-busybox-1.34.1-r7
-ca-certificates-20220614-r0
-ca-certificates-bundle-20220614-r0
-coreutils-9.0-r2
-curl-7.80.0-r6
-expat-2.5.0-r0
-git-2.34.7-r0
-libacl-2.2.53-r0
-libattr-2.5.1-r1
-libc-utils-0.7.2-r3
-libcrypto1.1-1.1.1t-r1
-libcurl-7.80.0-r6
-libedit-20210910.3.1-r0
-libintl-0.21-r0
-libproc-3.3.17-r0
-libretls-3.3.4-r3
-libssl1.1-1.1.1t-r1
-libuuid-2.37.4-r0
-libxml2-2.9.14-r2
-linux-pam-1.5.2-r0
-logrotate-3.18.1-r4
-musl-1.2.2-r7
-musl-utils-1.2.2-r7
-nano-5.9-r0
-ncurses-libs-6.3_p20211120-r1
-ncurses-terminfo-base-6.3_p20211120-r1
-nghttp2-libs-1.46.0-r0
-nginx-1.20.2-r1
-oniguruma-6.9.7.1-r0
-openssl-1.1.1t-r1
-pcre-8.45-r1
-pcre2-10.40-r0
-php8-8.0.25-r0
-php8-common-8.0.25-r0
-php8-fileinfo-8.0.25-r0
-php8-fpm-8.0.25-r0
-php8-mbstring-8.0.25-r0
-php8-openssl-8.0.25-r0
-php8-session-8.0.25-r0
-php8-simplexml-8.0.25-r0
-php8-xml-8.0.25-r0
-php8-xmlwriter-8.0.25-r0
-popt-1.18-r0
-procps-3.3.17-r0
-readline-8.1.1-r0
-s6-ipcserver-2.11.0.0-r0
-scanelf-1.3.3-r0
-shadow-4.8.1-r1
-skalibs-2.11.0.0-r0
-ssl_client-1.34.1-r7
-tzdata-2022f-r1
-utmps-0.1.0.3-r0
-xz-5.2.5-r1
-xz-libs-5.2.5-r1
-zlib-1.2.12-r3
+NAME                    VERSION           TYPE   
+alpine-baselayout       3.2.0-r18         apk     
+alpine-keys             2.4-r1            apk     
+apache2-utils           2.4.55-r0         apk     
+apk-tools               2.12.7-r3         apk     
+apr                     1.7.2-r0          apk     
+apr-util                1.6.3-r0          apk     
+argon2-libs             20190702-r1       apk     
+bash                    5.1.16-r0         apk     
+brotli-libs             1.0.9-r5          apk     
+busybox                 1.34.1            binary  
+busybox                 1.34.1-r7         apk     
+ca-certificates         20220614-r0       apk     
+ca-certificates-bundle  20220614-r0       apk     
+coreutils               9.0-r2            apk     
+curl                    7.80.0-r6         apk     
+expat                   2.5.0-r0          apk     
+git                     2.34.7-r0         apk     
+libacl                  2.2.53-r0         apk     
+libattr                 2.5.1-r1          apk     
+libc-utils              0.7.2-r3          apk     
+libcrypto1.1            1.1.1t-r1         apk     
+libcurl                 7.80.0-r6         apk     
+libedit                 20210910.3.1-r0   apk     
+libintl                 0.21-r0           apk     
+libproc                 3.3.17-r0         apk     
+libretls                3.3.4-r3          apk     
+libssl1.1               1.1.1t-r1         apk     
+libuuid                 2.37.4-r0         apk     
+libxml2                 2.9.14-r2         apk     
+linux-pam               1.5.2-r0          apk     
+logrotate               3.18.1-r4         apk     
+musl                    1.2.2-r7          apk     
+musl-utils              1.2.2-r7          apk     
+nano                    5.9-r0            apk     
+ncurses-libs            6.3_p20211120-r1  apk     
+ncurses-terminfo-base   6.3_p20211120-r1  apk     
+nghttp2-libs            1.46.0-r0         apk     
+nginx                   1.20.2-r1         apk     
+oniguruma               6.9.7.1-r0        apk     
+openssl                 1.1.1t-r1         apk     
+pcre                    8.45-r1           apk     
+pcre2                   10.40-r0          apk     
+php-cli                 8.0.25            binary  
+php-fpm                 8.0.25            binary  
+php8                    8.0.25-r0         apk     
+php8-common             8.0.25-r0         apk     
+php8-fileinfo           8.0.25-r0         apk     
+php8-fpm                8.0.25-r0         apk     
+php8-mbstring           8.0.25-r0         apk     
+php8-openssl            8.0.25-r0         apk     
+php8-session            8.0.25-r0         apk     
+php8-simplexml          8.0.25-r0         apk     
+php8-xml                8.0.25-r0         apk     
+php8-xmlwriter          8.0.25-r0         apk     
+popt                    1.18-r0           apk     
+procps                  3.3.17-r0         apk     
+readline                8.1.1-r0          apk     
+s6-ipcserver            2.11.0.0-r0       apk     
+scanelf                 1.3.3-r0          apk     
+shadow                  4.8.1-r1          apk     
+skalibs                 2.11.0.0-r0       apk     
+ssl_client              1.34.1-r7         apk     
+tzdata                  2022f-r1          apk     
+utmps                   0.1.0.3-r0        apk     
+xz                      5.2.5-r1          apk     
+xz-libs                 5.2.5-r1          apk     
+zlib                    1.2.12-r3         apk     
