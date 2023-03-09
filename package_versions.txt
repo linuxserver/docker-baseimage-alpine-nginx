@@ -1,7 +1,7 @@
 NAME                    VERSION           TYPE   
 alpine-baselayout       3.2.0-r16         apk     
 alpine-keys             2.4-r0            apk     
-apache2-utils           2.4.55-r0         apk     
+apache2-utils           2.4.56-r0         apk     
 apk-tools               2.12.7-r0         apk     
 apr                     1.7.2-r0          apk     
 apr-util                1.6.3-r0          apk     
@@ -33,8 +33,8 @@ libuuid                 2.37.4-r0         apk
 libxml2                 2.9.14-r2         apk     
 linux-pam               1.5.1-r1          apk     
 logrotate               3.18.1-r4         apk     
-musl                    1.2.2-r3          apk     
-musl-utils              1.2.2-r3          apk     
+musl                    1.2.2-r4          apk     
+musl-utils              1.2.2-r4          apk     
 nano                    5.7-r2            apk     
 ncurses-libs            6.2_p20210612-r1  apk     
 ncurses-terminfo-base   6.2_p20210612-r1  apk     
