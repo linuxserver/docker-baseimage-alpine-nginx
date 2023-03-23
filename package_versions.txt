@@ -43,7 +43,7 @@ netcat-openbsd          1.130-r3          apk
 nghttp2-libs            1.47.0-r0         apk     
 nginx                   1.22.1-r0         apk     
 oniguruma               6.9.8-r0          apk     
-openssl                 1.1.1t-r0         apk     
+openssl                 1.1.1t-r1         apk     
 pcre                    8.45-r2           apk     
 pcre2                   10.40-r0          apk     
 php-cli                 8.0.28            binary  
