@@ -32,6 +32,7 @@ RUN \
     /etc/nginx/fastcgi_params && \
   echo 'fastcgi_param  SERVER_NAME        $host; # Send HTTP_HOST as SERVER_NAME. If HTTP_HOST is blank, send the value of server_name from nginx (default is `_`)' >> \
     /etc/nginx/fastcgi_params && \
+  rm -f /etc/nginx/conf.d/stream.conf && \
   rm -f /etc/nginx/http.d/default.conf && \
   echo "**** configure php ****" && \
   sed -i "s#;error_log = log/php81/error.log.*#error_log = /config/log/php/error.log#g" \
