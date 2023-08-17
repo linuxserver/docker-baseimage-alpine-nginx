@@ -42,7 +42,6 @@ openssl                 1.1.1v-r0         apk
 pcre                    8.45-r1           apk     
 pcre2                   10.42-r0          apk     
 php-cli                 8.0.25            binary  
-php-fpm                 8.0.25            binary  
 php8                    8.0.25-r0         apk     
 php8-common             8.0.25-r0         apk     
 php8-fileinfo           8.0.25-r0         apk     
