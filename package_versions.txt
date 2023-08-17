@@ -2,7 +2,7 @@ NAME                    VERSION           TYPE
 alpine-baselayout       3.4.0-r0          apk     
 alpine-baselayout-data  3.4.0-r0          apk     
 alpine-keys             2.4-r1            apk     
-alpine-release          3.17.4-r0         apk     
+alpine-release          3.17.5-r0         apk     
 apache2-utils           2.4.57-r0         apk     
 apk-tools               2.12.10-r1        apk     
 apr                     1.7.2-r0          apk     
@@ -48,7 +48,6 @@ openssl                 3.0.10-r0         apk
 pcre                    8.45-r2           apk     
 pcre2                   10.42-r0          apk     
 php-cli                 8.1.22            binary  
-php-fpm                 8.1.22            binary  
 php81                   8.1.22-r0         apk     
 php81-common            8.1.22-r0         apk     
 php81-fileinfo          8.1.22-r0         apk     
