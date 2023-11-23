@@ -8,12 +8,12 @@ lsiown -R abc:abc \
 
 lsiown -R abc:abc \
     /config/keys \
+    /config/log \
     /config/nginx \
     /config/php
 
 lsiown abc:abc \
-    /config/www \
-    /config/log
+    /config/www
 
 chmod -R g+w \
     /config/nginx
