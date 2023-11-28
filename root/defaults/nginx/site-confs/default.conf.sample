@@ -1,4 +1,4 @@
-## Version 2023/04/13 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+## Version 2023/11/27 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/site-confs/default.conf.sample
 
 server {
     listen 80 default_server;
@@ -23,10 +23,11 @@ server {
         #auth_basic "Restricted";
         #auth_basic_user_file /config/nginx/.htpasswd;
 
-        try_files $uri $uri/ /index.html /index.php$is_args$args =404;
+        try_files $uri $uri/ /index.html /index.php$is_args$args;
     }
 
     location ~ ^(.+\.php)(.*)$ {
+        try_files $fastcgi_script_name =404;
         fastcgi_split_path_info ^(.+\.php)(.*)$;
         fastcgi_pass 127.0.0.1:9000;
         fastcgi_index index.php;
