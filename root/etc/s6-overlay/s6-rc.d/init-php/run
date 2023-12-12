@@ -1,6 +1,11 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+# precreate log files
+if [[ ! -f /config/log/php/error.log ]]; then
+    touch /config/log/php/error.log
+fi
+
 # set default timezone
 printf "date.timezone = %s\\n" "${TZ:-UTC}" >/etc/php83/conf.d/30_timezone.ini
 

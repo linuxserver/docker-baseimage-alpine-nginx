@@ -1,6 +1,13 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+# precreate log files
+for file in /config/log/nginx/access.log /config/log/nginx/error.log; do
+    if [[ ! -f "${file}" ]]; then
+        touch "${file}"
+    fi
+done
+
 # copy default config files if they don't exist
 if [[ ! -f /config/nginx/nginx.conf ]]; then
     cp /defaults/nginx/nginx.conf.sample /config/nginx/nginx.conf
