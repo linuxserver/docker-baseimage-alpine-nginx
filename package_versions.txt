@@ -14,7 +14,7 @@ ca-certificates         20230506-r0       apk
 ca-certificates-bundle  20230506-r0       apk   
 coreutils               9.1-r0            apk   
 curl                    8.5.0-r0          apk   
-expat                   2.5.0-r0          apk   
+expat                   2.6.0-r0          apk   
 git                     2.36.6-r0         apk   
 gmp                     6.2.1-r2          apk   
 jq                      1.6-r1            apk   
