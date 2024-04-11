@@ -2,7 +2,7 @@ NAME                    VERSION           TYPE
 alpine-baselayout       3.2.0-r23         apk     
 alpine-baselayout-data  3.2.0-r23         apk     
 alpine-keys             2.4-r1            apk     
-apache2-utils           2.4.58-r0         apk     
+apache2-utils           2.4.59-r0         apk     
 apk-tools               2.12.9-r3         apk     
 apr                     1.7.2-r0          apk     
 apr-util                1.6.3-r0          apk     
