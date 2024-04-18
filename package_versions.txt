@@ -4,7 +4,7 @@ alpine-baselayout-data  3.4.0-r0          apk
 alpine-keys             2.4-r1            apk     
 alpine-release          3.17.7-r0         apk     
 apache2-utils           2.4.59-r0         apk     
-apk-tools               2.12.13-r1        apk     
+apk-tools               2.12.14-r0        apk     
 apr                     1.7.2-r0          apk     
 apr-util                1.6.3-r0          apk     
 argon2-libs             20190702-r2       apk     
@@ -16,6 +16,7 @@ ca-certificates         20240226-r0       apk
 ca-certificates-bundle  20240226-r0       apk     
 coreutils               9.1-r0            apk     
 curl                    8.5.0-r0          apk     
+findutils               4.9.0-r3          apk     
 git                     2.38.5-r0         apk     
 jq                      1.6-r2            apk     
 libacl                  2.3.1-r1          apk     
