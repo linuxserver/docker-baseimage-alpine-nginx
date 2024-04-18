@@ -12,10 +12,10 @@ find /defaults/nginx/ \
     -maxdepth 1 \
     -name "*.conf.sample" \
     -type f \
-    -exec cp "{}" /config/nginx/ +
+    -exec cp "{}" /config/nginx/ \;
 
 find /defaults/nginx/site-confs/ \
     -maxdepth 1 \
     -name "*.conf.sample" \
     -type f \
-    -exec cp "{}" /config/nginx/site-confs/ +
+    -exec cp "{}" /config/nginx/site-confs/ \;
