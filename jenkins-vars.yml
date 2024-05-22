@@ -4,9 +4,9 @@
 project_name: docker-baseimage-alpine-nginx
 external_type: na
 custom_version_command: "echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'\"nginx\"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'\"php83\"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')"
-release_type: stable
+release_type: prerelease
 release_tag: "3.19"
-ls_branch: master
+ls_branch: "3.19"
 repo_vars:
   - BUILD_VERSION_ARG = 'OS'
   - LS_USER = 'linuxserver'
