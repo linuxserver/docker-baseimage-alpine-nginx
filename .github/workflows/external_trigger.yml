@@ -20,7 +20,7 @@ jobs:
           echo "**** External trigger running off of master branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_BASEIMAGE_ALPINE_NGINX_MASTER\". ****"
           echo "External trigger running off of master branch. To disable this trigger, set a Github secret named \`PAUSE_EXTERNAL_TRIGGER_BASEIMAGE_ALPINE_NGINX_MASTER\`" >> $GITHUB_STEP_SUMMARY
           echo "**** Retrieving external version ****"
-          EXT_RELEASE=$(echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"nginx"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"php83"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'))
+          EXT_RELEASE=$(echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"nginx"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"php83"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'))
           if [ -z "${EXT_RELEASE}" ] || [ "${EXT_RELEASE}" == "null" ]; then
             echo "**** Can't retrieve external version, exiting ****"
             FAILURE_REASON="Can't retrieve external version for baseimage-alpine-nginx branch master"
@@ -35,7 +35,7 @@ jobs:
           echo "External version: ${EXT_RELEASE}" >> $GITHUB_STEP_SUMMARY
           echo "**** Retrieving last pushed version ****"
           image="linuxserver/baseimage-alpine-nginx"
-          tag="3.19"
+          tag="3.20"
           token=$(curl -sX GET \
             "https://ghcr.io/token?scope=repository%3Alinuxserver%2Fbaseimage-alpine-nginx%3Apull" \
             | jq -r '.token')
@@ -61,7 +61,7 @@ jobs:
           IMAGE_VERSION=$(echo ${IMAGE_RELEASE} | awk -F'-ls' '{print $1}')
           if [ -z "${IMAGE_VERSION}" ]; then
             echo "**** Can't retrieve last pushed version, exiting ****"
-            FAILURE_REASON="Can't retrieve last pushed version for baseimage-alpine-nginx tag 3.19"
+            FAILURE_REASON="Can't retrieve last pushed version for baseimage-alpine-nginx tag 3.20"
             curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 16711680,
               "description": "**Trigger Failed** \n**Reason:** '"${FAILURE_REASON}"' \n"}],
               "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
@@ -97,7 +97,7 @@ jobs:
               --data-urlencode "description=GHA external trigger https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
               --data-urlencode "Submit=Submit"
             echo "**** Notifying Discord ****"
-            TRIGGER_REASON="A version change was detected for baseimage-alpine-nginx tag 3.19. Old version:${IMAGE_VERSION} New version:${EXT_RELEASE}"
+            TRIGGER_REASON="A version change was detected for baseimage-alpine-nginx tag 3.20. Old version:${IMAGE_VERSION} New version:${EXT_RELEASE}"
             curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
               "description": "**Build Triggered** \n**Reason:** '"${TRIGGER_REASON}"' \n**Build URL:** '"${buildurl}display/redirect"' \n"}],
               "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
