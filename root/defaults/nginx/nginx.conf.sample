@@ -1,7 +1,7 @@
 ## Version 2024/05/27 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/nginx.conf.sample
 
 ### Based on alpine defaults
-# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.19-stable
+# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.20-stable
 
 user abc;
 
