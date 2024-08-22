@@ -15,7 +15,7 @@ busybox-binsh           1.36.1-r7         apk
 ca-certificates         20240226-r0       apk       
 ca-certificates-bundle  20240226-r0       apk       
 catatonit               0.1.7-r0          apk       
-composer                2.7.7             binary    
+composer                2.7.8             binary    
 coreutils               9.3-r2            apk       
 curl                    8.9.0-r0          apk       
 findutils               4.9.0-r5          apk       
