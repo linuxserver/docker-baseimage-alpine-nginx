@@ -1,11 +1,11 @@
 /config/log/php/*.log {
-        rotate 7
         weekly
-        missingok
-        notifempty
-        delaycompress
+        rotate 7
         compress
+        delaycompress
         nodateext
+        notifempty
+        missingok
         sharedscripts
         postrotate
                 s6-svc -t /run/service/svc-php-fpm

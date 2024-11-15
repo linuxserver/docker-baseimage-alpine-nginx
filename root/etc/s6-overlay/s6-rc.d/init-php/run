@@ -6,6 +6,11 @@ if [[ ! -f /config/log/php/error.log ]]; then
     touch /config/log/php/error.log
 fi
 
+if [[ -n ${LSIO_READ_ONLY_FS} ]] || [[ -n ${LSIO_NON_ROOT_USER} ]]; then
+    echo "Custom PHP config not supported with read-only or non-root operation, skipping."
+    exit 0
+fi
+
 # set default timezone
 printf "date.timezone = %s\\n" "${TZ:-UTC}" >/etc/php83/conf.d/30_timezone.ini
 
