@@ -8,6 +8,8 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="nemchik"
 
+ENV PHP_INI_SCAN_DIR=":/config/php"
+
 # install packages
 RUN \
   echo "**** install build packages ****" && \
@@ -57,6 +59,8 @@ RUN \
     /etc/php83/php-fpm.d/www.conf && \
   sed -i "s#group = nobody.*#group = abc#g" \
     /etc/php83/php-fpm.d/www.conf && \
+  echo "**** add run paths to php runtime config ****" && \
+  grep -qxF 'include=/config/php/*.conf' /etc/php83/php-fpm.conf || echo 'include=/config/php/*.conf' >> /etc/php83/php-fpm.conf && \
   echo "**** install php composer ****" && \
   EXPECTED_CHECKSUM="$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')" && \
   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
