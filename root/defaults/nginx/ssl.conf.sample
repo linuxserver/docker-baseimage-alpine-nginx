@@ -1,8 +1,8 @@
-## Version 2024/10/19 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/ssl.conf.sample
+## Version 2024/12/06 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/ssl.conf.sample
 
 ### Mozilla Recommendations
-# generated 2023-06-25, Mozilla Guideline v5.7, nginx 1.24.0, OpenSSL 3.1.1, intermediate configuration
-# https://ssl-config.mozilla.org/#server=nginx&version=1.26.0&config=intermediate&openssl=3.3.2&ocsp=false&guideline=5.7
+# generated 2024-12-06, Mozilla Guideline v5.7, nginx 1.26.2, OpenSSL 3.3.2, intermediate config, no OCSP
+# https://ssl-config.mozilla.org/#server=nginx&version=1.26.2&config=intermediate&openssl=3.3.2&ocsp=false&guideline=5.7
 
 ssl_certificate /config/keys/cert.crt;
 ssl_certificate_key /config/keys/cert.key;
