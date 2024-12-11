@@ -35,9 +35,9 @@ full_custom_readme: |
 
   Featuring :-
 
-   + weekly updates
-   + security updates
-   
+  + weekly updates
+  + security updates
+
   The following line is only in this repo for loop testing:
   - { date: "01.01.50:", desc: "I am the release message for this internal repo." }
   {%- endraw %}

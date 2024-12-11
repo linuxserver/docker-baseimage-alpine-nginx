@@ -1,8 +1,8 @@
-## Version 2023/08/13 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/ssl.conf.sample
+## Version 2024/12/06 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/ssl.conf.sample
 
 ### Mozilla Recommendations
-# generated 2023-06-25, Mozilla Guideline v5.7, nginx 1.24.0, OpenSSL 3.1.1, intermediate configuration
-# https://ssl-config.mozilla.org/#server=nginx&version=1.24.0&config=intermediate&openssl=3.1.1&guideline=5.7
+# generated 2024-12-06, Mozilla Guideline v5.7, nginx 1.26.2, OpenSSL 3.3.2, intermediate config, no OCSP
+# https://ssl-config.mozilla.org/#server=nginx&version=1.26.2&config=intermediate&openssl=3.3.2&ocsp=false&guideline=5.7
 
 ssl_certificate /config/keys/cert.crt;
 ssl_certificate_key /config/keys/cert.key;
@@ -20,13 +20,6 @@ ssl_prefer_server_ciphers off;
 
 # HSTS (ngx_http_headers_module is required) (63072000 seconds)
 #add_header Strict-Transport-Security "max-age=63072000" always;
-
-# OCSP stapling
-#ssl_stapling on;
-#ssl_stapling_verify on;
-
-# verify chain of trust of OCSP response using Root CA and Intermediate certs
-#ssl_trusted_certificate /config/keys/cert.crt;
 
 # Optional additional headers
 #add_header Cache-Control "no-transform" always;

@@ -1,12 +1,14 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.20
+FROM ghcr.io/linuxserver/baseimage-alpine:3.21
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="nemchik"
+
+ENV PHP_INI_SCAN_DIR=":/config/php"
 
 # install packages
 RUN \
@@ -57,14 +59,16 @@ RUN \
     /etc/php83/php-fpm.d/www.conf && \
   sed -i "s#group = nobody.*#group = abc#g" \
     /etc/php83/php-fpm.d/www.conf && \
+  echo "**** add run paths to php runtime config ****" && \
+  grep -qxF 'include=/config/php/*.conf' /etc/php83/php-fpm.conf || echo 'include=/config/php/*.conf' >> /etc/php83/php-fpm.conf && \
   echo "**** install php composer ****" && \
   EXPECTED_CHECKSUM="$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')" && \
   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   ACTUAL_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")" && \
   if [ "$EXPECTED_CHECKSUM" != "$ACTUAL_CHECKSUM" ]; then \
-      >&2 echo 'ERROR: Invalid installer checksum' && \
-      rm composer-setup.php && \
-      exit 1; \
+    >&2 echo 'ERROR: Invalid installer checksum' && \
+    rm composer-setup.php && \
+    exit 1; \
   fi && \
   php composer-setup.php --install-dir=/usr/bin && \
   rm composer-setup.php && \
