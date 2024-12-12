@@ -1,7 +1,7 @@
-## Version 2024/05/27 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/nginx.conf.sample
+## Version 2024/12/06 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/nginx.conf.sample
 
 ### Based on alpine defaults
-# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.20-stable
+# https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.21-stable
 
 user abc;
 
@@ -74,6 +74,12 @@ http {
 
     # Sets the path, format, and configuration for a buffered log write.
     access_log /config/log/nginx/access.log;
+
+    client_body_temp_path /tmp/nginx 1 2;
+    proxy_temp_path /tmp/nginx-proxy;
+    fastcgi_temp_path /tmp/nginx-fastcgi;
+    uwsgi_temp_path /tmp/nginx-uwsgi;
+    scgi_temp_path /tmp/nginx-scgi;
 
     # Includes virtual hosts configs.
     include /etc/nginx/http.d/*.conf;
