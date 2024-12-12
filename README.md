@@ -30,8 +30,8 @@ A custom base image built with [Alpine linux][appurl], [nginx][nginxurl] and [S6
 
 Featuring :-
 
- + weekly updates
- + security updates
- 
++ weekly updates
++ security updates
+
 The following line is only in this repo for loop testing:
 - { date: "01.01.50:", desc: "I am the release message for this internal repo." }
