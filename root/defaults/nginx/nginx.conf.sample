@@ -82,7 +82,9 @@ http {
     scgi_temp_path /tmp/nginx-scgi;
 
     proxy_cache_path /tmp/nginx-proxy-cache keys_zone=swag-proxy:10m;
-    fastcgi_cache_path /tmp/nginx-cgi-cache keys_zone=swag-cgi:10m;
+    fastcgi_cache_path /tmp/nginx-fcgi-cache keys_zone=swag-fcgi:10m;
+    scgi_cache_path /tmp/nginx-scgi-cache keys_zone=swag-scgi:10m;
+    uwsgi_cache_path /tmp/nginx-uwsgi-cache keys_zone=swag-uwsgi:10m;
 
     # Includes virtual hosts configs.
     include /etc/nginx/http.d/*.conf;
