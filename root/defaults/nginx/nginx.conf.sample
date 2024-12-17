@@ -1,4 +1,4 @@
-## Version 2024/12/06 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/nginx.conf.sample
+## Version 2024/12/17 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/nginx.conf.sample
 
 ### Based on alpine defaults
 # https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.21-stable
@@ -80,6 +80,11 @@ http {
     fastcgi_temp_path /tmp/nginx-fastcgi;
     uwsgi_temp_path /tmp/nginx-uwsgi;
     scgi_temp_path /tmp/nginx-scgi;
+
+    proxy_cache_path /tmp/nginx-proxy-cache keys_zone=lsio-proxy:10m;
+    fastcgi_cache_path /tmp/nginx-fcgi-cache keys_zone=lsio-fcgi:10m;
+    scgi_cache_path /tmp/nginx-scgi-cache keys_zone=lsio-scgi:10m;
+    uwsgi_cache_path /tmp/nginx-uwsgi-cache keys_zone=lsio-uwsgi:10m;
 
     # Includes virtual hosts configs.
     include /etc/nginx/http.d/*.conf;
