@@ -17,7 +17,7 @@ ca-certificates-bundle  20240226-r0       apk
 catatonit               0.1.7-r0          apk       
 composer                2.8.4             binary    
 coreutils               9.3-r2            apk       
-curl                    8.9.1-r0          apk       
+curl                    8.9.1-r1          apk       
 findutils               4.9.0-r5          apk       
 git                     2.40.3-r0         apk       
 jq                      1.6-r4            apk       
@@ -27,7 +27,7 @@ libbsd                  0.11.7-r1         apk
 libbz2                  1.0.8-r5          apk       
 libc-utils              0.7.2-r5          apk       
 libcrypto3              3.1.7-r1          apk       
-libcurl                 8.9.1-r0          apk       
+libcurl                 8.9.1-r1          apk       
 libedit                 20221030.3.1-r1   apk       
 libexpat                2.6.4-r0          apk       
 libidn2                 2.3.4-r1          apk       
