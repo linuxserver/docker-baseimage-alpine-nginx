@@ -9,10 +9,9 @@ fi
 # create local php.ini if it doesn't exist, set local timezone
 if [[ ! -f /config/php/php-local.ini ]]; then
     printf "; Edit this file to override php.ini directives\\n\\n" >/config/php/php-local.ini
+    # set default timezone
+    printf "date.timezone = %s\\n" "${TZ:-UTC}" >/config/php/php-local.ini
 fi
-
-# set default timezone
-printf "date.timezone = %s\\n" "${TZ:-UTC}" >/config/php/php-local.ini
 
 # create override for www.conf if it doesn't exist
 if [[ ! -f /config/php/www2.conf ]]; then
