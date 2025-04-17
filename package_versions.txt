@@ -42,7 +42,7 @@ libproc2                4.0.4-r2          apk
 libpsl                  0.21.5-r3         apk       
 libssl3                 3.3.3-r0          apk       
 libunistring            1.2-r0            apk       
-libuuid                 2.40.4-r0         apk       
+libuuid                 2.40.4-r1         apk       
 libxml2                 2.13.4-r5         apk       
 libzip                  1.11.2-r0         apk       
 linux-pam               1.6.1-r1          apk       
