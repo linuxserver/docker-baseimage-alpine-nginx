@@ -3,12 +3,10 @@
 # jenkins variables
 project_name: docker-baseimage-alpine-nginx
 external_type: na
-custom_version_command: "echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'\"nginx\"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'\"php83\"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')"
+custom_version_command: "echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'\"nginx\"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'\"php84\"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')"
 release_type: stable
-release_tag: "3.21"
+release_tag: "3.22"
 ls_branch: master
-image_sbom: true
-image_provenance: true
 repo_vars:
   - BUILD_VERSION_ARG = 'OS'
   - LS_USER = 'linuxserver'
@@ -24,6 +22,6 @@ repo_vars:
   - CI_PORT='80'
   - CI_SSL='false'
   - CI_DELAY='120'
-  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_DOCKERENV='TZ=Etc/UTC'
   - CI_AUTH='user:password'
   - CI_WEBPATH=''
