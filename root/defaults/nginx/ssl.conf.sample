@@ -1,8 +1,8 @@
-## Version 2024/12/06 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/ssl.conf.sample
+## Version 2025/05/31 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/ssl.conf.sample
 
 ### Mozilla Recommendations
-# generated 2024-12-06, Mozilla Guideline v5.7, nginx 1.26.2, OpenSSL 3.3.2, intermediate config, no OCSP
-# https://ssl-config.mozilla.org/#server=nginx&version=1.26.2&config=intermediate&openssl=3.3.2&ocsp=false&guideline=5.7
+# generated 2025-05-31, Mozilla Guideline v5.7, nginx 1.28.0, OpenSSL 3.5.0, intermediate config, no OCSP
+# https://ssl-config.mozilla.org/#server=nginx&version=1.28.0&config=intermediate&openssl=3.5.0&ocsp=false&guideline=5.7
 
 ssl_certificate /config/keys/cert.crt;
 ssl_certificate_key /config/keys/cert.key;
@@ -15,6 +15,7 @@ ssl_dhparam /config/nginx/dhparams.pem;
 
 # intermediate configuration
 ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ecdh_curve X25519:prime256v1:secp384r1;
 ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-CHACHA20-POLY1305;
 ssl_prefer_server_ciphers off;
 
