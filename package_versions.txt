@@ -16,14 +16,14 @@ c-ares                  1.27.0-r0             apk
 ca-certificates         20241121-r1           apk       
 ca-certificates-bundle  20241121-r1           apk       
 catatonit               0.2.0-r0              apk       
-composer                2.8.9                 binary    
+composer                2.8.10                binary    
 coreutils               9.4-r2                apk       
 coreutils-env           9.4-r2                apk       
 coreutils-fmt           9.4-r2                apk       
 coreutils-sha512sum     9.4-r2                apk       
 curl                    8.12.1-r0             apk       
 findutils               4.9.0-r5              apk       
-git                     2.43.6-r0             apk       
+git                     2.43.7-r0             apk       
 jq                      1.7.1-r0              apk       
 libacl                  2.3.1-r4              apk       
 libattr                 2.5.1-r5              apk       
