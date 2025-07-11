@@ -1,4 +1,4 @@
-## Version 2025/05/31 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+## Version 2025/05/31 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/3.22/root/defaults/nginx/site-confs/default.conf.sample
 
 server {
     listen 80 default_server;

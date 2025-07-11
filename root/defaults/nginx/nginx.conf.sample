@@ -1,4 +1,4 @@
-## Version 2025/05/31 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/master/root/defaults/nginx/nginx.conf.sample
+## Version 2025/05/31 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/3.22/root/defaults/nginx/nginx.conf.sample
 
 ### Based on alpine defaults
 # https://git.alpinelinux.org/aports/tree/main/nginx/nginx.conf?h=3.22-stable
