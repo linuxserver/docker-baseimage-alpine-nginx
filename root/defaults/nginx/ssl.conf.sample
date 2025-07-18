@@ -1,4 +1,4 @@
-## Version 2025/05/31 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/3.22/root/defaults/nginx/ssl.conf.sample
+## Version 2025/07/18 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/3.22/root/defaults/nginx/ssl.conf.sample
 
 ### Mozilla Recommendations
 # generated 2025-05-31, Mozilla Guideline v5.7, nginx 1.28.0, OpenSSL 3.5.0, intermediate config, no OCSP
@@ -31,3 +31,4 @@ ssl_prefer_server_ciphers off;
 #add_header X-Frame-Options "SAMEORIGIN" always;
 #add_header X-UA-Compatible "IE=Edge" always;
 #add_header X-XSS-Protection "1; mode=block" always;
+#add_header Alt-Svc 'h3=":443"' always;
