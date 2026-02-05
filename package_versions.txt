@@ -3,7 +3,7 @@ acl-libs                2.3.2-r1          apk
 alpine-baselayout       3.6.8-r1          apk       
 alpine-baselayout-data  3.6.8-r1          apk       
 alpine-keys             2.5-r0            apk       
-alpine-release          3.21.5-r0         apk       
+alpine-release          3.21.6-r0         apk       
 apache2-utils           2.4.66-r0         apk       
 apk-tools               2.14.6-r3         apk       
 apr                     1.7.5-r0          apk       
@@ -33,7 +33,7 @@ libbz2                  1.0.8-r6          apk
 libcrypto3              3.3.6-r0          apk       
 libcurl                 8.14.1-r2         apk       
 libedit                 20240808.3.1-r0   apk       
-libexpat                2.7.3-r0          apk       
+libexpat                2.7.4-r0          apk       
 libidn2                 2.3.7-r0          apk       
 libintl                 0.22.5-r0         apk       
 libmd                   1.1.0-r0          apk       
