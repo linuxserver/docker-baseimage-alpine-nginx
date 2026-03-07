@@ -147,7 +147,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.23/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"nginx"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.23/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"php84"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://') ''',
+            script: ''' echo $(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.23/main/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"nginx"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')_$(curl -sL http://dl-cdn.alpinelinux.org/alpine/v3.23/community/x86_64/APKINDEX.tar.gz | tar -xz -C /tmp && awk '/^P:'"php85"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://') ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }
