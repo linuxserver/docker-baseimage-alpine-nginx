@@ -47,7 +47,7 @@ touch /config/nginx/resolver.conf
 if ! grep -q 'resolver' /config/nginx/resolver.conf; then
     RESOLVERRAW=$(awk 'BEGIN{ORS=" "} $1=="nameserver" {print $2}' /etc/resolv.conf)
     for i in ${RESOLVERRAW}; do
-        if [[ "$(awk -F ':' '{print NF-1}' <<<"${i}")" -le 2 ]]; then
+        if [[ "${i}" =~ ^[0-9]{1,3}(\.[0-9]{1,3}){3}$ ]]; then
             RESOLVER="${RESOLVER} ${i}"
         fi
     done
