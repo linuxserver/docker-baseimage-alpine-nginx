@@ -21,8 +21,8 @@ ssl_session_cache shared:MozSSL:10m; # about 40000 sessions
 
 ### Mozilla Practical security implementation
 # https://developer.mozilla.org/en-US/docs/Web/Security
-#add_header Access-Control-Allow-Origin "*" always;
-#add_header Content-Security-Policy "upgrade-insecure-requests; base-uri 'self'; form-action 'self'; frame-ancestors 'self'" always;
+#add_header Access-Control-Allow-Origin $http_origin always;
+#add_header Content-Security-Policy "upgrade-insecure-requests; base-uri 'self'; form-action 'self'; frame-ancestors 'self';" always;
 #add_header Cross-Origin-Resource-Policy "same-origin" always;
 #add_header Referrer-Policy "same-origin" always;
 #add_header X-Content-Type-Options "nosniff" always;
