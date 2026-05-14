@@ -3,7 +3,7 @@ alpine-baselayout       3.6.5-r0          apk
 alpine-baselayout-data  3.6.5-r0          apk       
 alpine-keys             2.4-r1            apk       
 alpine-release          3.20.10-r0        apk       
-apache2-utils           2.4.66-r0         apk       
+apache2-utils           2.4.67-r0         apk       
 apk-tools               2.14.4-r1         apk       
 apr                     1.7.5-r0          apk       
 apr-util                1.6.3-r1          apk       
@@ -16,7 +16,7 @@ c-ares                  1.33.1-r0         apk
 ca-certificates         20260413-r0       apk       
 ca-certificates-bundle  20260413-r0       apk       
 catatonit               0.2.0-r0          apk       
-composer                2.9.7             binary    
+composer                2.9.8             binary    
 coreutils               9.5-r2            apk       
 coreutils-env           9.5-r2            apk       
 coreutils-fmt           9.5-r2            apk       
