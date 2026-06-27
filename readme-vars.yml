@@ -3,6 +3,9 @@
 
 # project information
 project_name: baseimage-alpine-nginx
+
+project_deprecation_status: true
+
 full_custom_readme: |
   {% raw -%}
   [linuxserverurl]: https://linuxserver.io
