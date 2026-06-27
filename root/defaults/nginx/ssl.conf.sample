@@ -1,14 +1,14 @@
-## Version 2026/05/04 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/3.24/root/defaults/nginx/ssl.conf.sample
+## Version 2026/06/27 - Changelog: https://github.com/linuxserver/docker-baseimage-alpine-nginx/commits/3.24/root/defaults/nginx/ssl.conf.sample
 
 ssl_certificate /config/keys/cert.crt;
 ssl_certificate_key /config/keys/cert.key;
 
 # HSTS (ngx_http_headers_module is required) (63072000 seconds)
-#add_header Strict-Transport-Security "max-age=63072000" always;
+add_header Strict-Transport-Security "max-age=63072000;
 
-### Mozilla SSL Configuration Generator
-# generated 2026-05-04, Mozilla Guideline v6.0, nginx 1.28.3, OpenSSL 3.5.6, intermediate config, HSTS
-# https://ssl-config.mozilla.org/#server=nginx&version=1.28.3&config=intermediate&openssl=3.5.6&hsts&guideline=6.0
+### TLSRef Configuration Generator
+# generated 2026-06-27, TLSRef Guideline v6.0, nginx 1.30.3, OpenSSL 3.5.7, intermediate config, HSTS, gitrev=f17a584
+# https://configurator.tlsref.org/#server=nginx&version=1.30.3&config=intermediate&openssl=3.5.7&hsts&guideline=6.0
 # intermediate configuration
 ssl_protocols TLSv1.2 TLSv1.3;
 ssl_ecdh_curve X25519MLKEM768:X25519:prime256v1:secp384r1;
