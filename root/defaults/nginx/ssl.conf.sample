@@ -4,7 +4,7 @@ ssl_certificate /config/keys/cert.crt;
 ssl_certificate_key /config/keys/cert.key;
 
 # HSTS (ngx_http_headers_module is required) (63072000 seconds)
-add_header Strict-Transport-Security "max-age=63072000;
+add_header Strict-Transport-Security "max-age=63072000";
 
 ### TLSRef Configuration Generator
 # generated 2026-06-27, TLSRef Guideline v6.0, nginx 1.30.3, OpenSSL 3.5.7, intermediate config, HSTS, gitrev=f17a584
