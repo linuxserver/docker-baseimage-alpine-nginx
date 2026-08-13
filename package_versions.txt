@@ -7,7 +7,7 @@ alpine-release          3.21.7-r0         apk
 apache2-utils           2.4.68-r0         apk       
 apk-tools               2.14.6-r3         apk       
 apr                     1.7.5-r0          apk       
-apr-util                1.6.3-r1          apk       
+apr-util                1.6.4-r0          apk       
 argon2-libs             20190702-r5       apk       
 bash                    5.2.37-r0         apk       
 brotli-libs             1.1.0-r2          apk       
