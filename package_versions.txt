@@ -44,7 +44,7 @@ libpsl                  0.21.5-r3         apk
 libssl3                 3.5.9-r1          apk       
 libunistring            1.4.2-r0          apk       
 libuuid                 2.42.3-r1         apk       
-libxml2                 2.13.9-r3         apk       
+libxml2                 2.13.9-r5         apk       
 libzip                  1.11.4-r2         apk       
 linux-pam               1.7.1-r2          apk       
 logrotate               3.22.0-r0         apk       
